@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import os, csv
-import urllib.parse
 
 # -----------------------------
 # LOGIN
@@ -49,8 +48,10 @@ if not st.session_state.auth["ok"]:
     st.stop()
 
 # -----------------------------
-# MANAGER: UPLOAD + DATE SELECT
+# MANAGER FILE + DATE
 # -----------------------------
+today = datetime.now().strftime("%Y-%m-%d")
+
 if st.session_state.auth["role"] == "manager":
 
     st.sidebar.header("📂 Daily File")
@@ -58,43 +59,40 @@ if st.session_state.auth["role"] == "manager":
     uploaded_file = st.sidebar.file_uploader("Upload today's file", type=["txt"])
 
     if uploaded_file:
-        today = datetime.now().strftime("%Y-%m-%d")
-
         os.makedirs("data", exist_ok=True)
 
-        # Save today's file
         with open("current_day.txt", "wb") as f:
             f.write(uploaded_file.getbuffer())
 
-        # Save historical copy
         with open(f"data/{today}.txt", "wb") as f:
             f.write(uploaded_file.getbuffer())
 
         st.sidebar.success(f"Saved for {today}")
 
-    # Date selector
     files = sorted(os.listdir("data"), reverse=True) if os.path.exists("data") else []
     selected_file = st.sidebar.selectbox("📅 View date", ["Today"] + files)
 
     if selected_file == "Today":
         if os.path.exists("current_day.txt"):
             raw = pd.read_csv("current_day.txt", sep="\t")
+            selected_date = today
         else:
             st.warning("Upload today's file")
             st.stop()
     else:
         raw = pd.read_csv(f"data/{selected_file}", sep="\t")
+        selected_date = selected_file.replace(".txt", "")
 
 else:
-    # DRIVER always uses current day
     if os.path.exists("current_day.txt"):
         raw = pd.read_csv("current_day.txt", sep="\t")
+        selected_date = today
     else:
         st.warning("🚧 Waiting for today's delivery file")
         st.stop()
 
 # -----------------------------
-# LOAD ROUTE MAP
+# CLEAN DATA
 # -----------------------------
 route_map = pd.read_csv("route_map.csv")
 
@@ -116,21 +114,26 @@ jobs["driver"] = jobs["driver"].fillna("Unassigned")
 jobs["route"] = jobs["route"].fillna("Unknown")
 
 # -----------------------------
-# COMPLETED
+# POD FILE BY DATE
 # -----------------------------
-if os.path.exists("deliveries.csv"):
-    completed = pd.read_csv("deliveries.csv")
+os.makedirs("deliveries", exist_ok=True)
+pod_file = f"deliveries/{selected_date}.csv"
+
+if os.path.exists(pod_file):
+    completed = pd.read_csv(pod_file)
+    done_ids = completed["order_id"].astype(str)
 else:
     completed = pd.DataFrame()
+    done_ids = []
 
-os.makedirs("photos", exist_ok=True)
+jobs = jobs[~jobs["order_id"].astype(str).isin(done_ids)]
 
 # -----------------------------
 # MANAGER VIEW
 # -----------------------------
 if st.session_state.auth["role"] == "manager":
 
-    st.title("📊 Manager Dashboard")
+    st.title(f"📊 Manager Dashboard ({selected_date})")
 
     st.subheader("📦 Deliveries")
     st.dataframe(jobs[["driver", "route", "customer", "order_id"]])
@@ -145,7 +148,6 @@ if st.session_state.auth["role"] == "manager":
         )
 
         r = completed.loc[i]
-
         st.write(r)
 
         if pd.notna(r.get("image")):
@@ -178,5 +180,36 @@ idx = st.selectbox(
 
 row = driver_jobs.loc[idx]
 
-st.write(row["customer"])
-st.write(row["order_id"])
+customer = row["customer"]
+order_id = row["order_id"]
+route = row["route"]
+
+st.write(customer)
+st.write(order_id)
+
+# -----------------------------
+# SAVE POD (DATE BASED)
+# -----------------------------
+if st.button("✅ Confirm Delivery"):
+
+    data = {
+        "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "driver": driver,
+        "route": route,
+        "customer": customer,
+        "order_id": order_id
+    }
+
+    df = pd.DataFrame([data])
+    exists = os.path.isfile(pod_file)
+
+    df.to_csv(
+        pod_file,
+        mode="a",
+        header=not exists,
+        index=False,
+        quoting=csv.QUOTE_ALL
+    )
+
+    st.success("Saved")
+    st.rerun()
