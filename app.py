@@ -164,7 +164,10 @@ if st.session_state.auth["role"] == "manager":
         """, unsafe_allow_html=True)
 
         if r["image"]:
-            st.image(base64.b64decode(r["image"]))
+            try:
+                st.image(base64.b64decode(r["image"]))
+            except:
+                st.warning("Image too large to display")
 
     st.stop()
 
@@ -228,11 +231,24 @@ if st.session_state.review:
     with c2:
         if st.button("Confirm"):
 
-            sheet.append_row([
-                d["time"], d["driver"], d["route"],
-                d["customer"], d["order_id"],
-                d["status"], d["notes"], d["image"]
-            ])
+            try:
+                image_data = d["image"]
+
+                # Limit size to avoid crash
+                if image_data and len(image_data) > 50000:
+                    image_data = image_data[:50000]
+
+                sheet.append_row([
+                    d["time"], d["driver"], d["route"],
+                    d["customer"], d["order_id"],
+                    d["status"], d["notes"], image_data
+                ])
+
+                st.success("Saved ✅")
+
+            except Exception as e:
+                st.error("Failed to save")
+                st.code(str(e))
 
             st.session_state.review = None
             st.rerun()
