@@ -163,11 +163,13 @@ if st.session_state.auth["role"] == "manager":
         </div>
         """, unsafe_allow_html=True)
 
-        if r["image"]:
-            try:
-                st.image(base64.b64decode(r["image"]))
-            except:
-                st.warning("Image too large to display")
+     image_data = r.get("image", "")
+
+if image_data:
+    try:
+        st.image(base64.b64decode(image_data))
+    except:
+        st.warning("Image could not be displayed")
 
     st.stop()
 
