@@ -148,7 +148,7 @@ if st.session_state.auth["role"] == "manager":
         i = st.selectbox(
             "Select POD",
             completed.index,
-            format_func=lambda x: completed.loc[x,"customer"]
+            format_func=lambda x: completed.loc[x, "customer"]
         )
 
         r = completed.loc[i]
@@ -163,16 +163,16 @@ if st.session_state.auth["role"] == "manager":
         </div>
         """, unsafe_allow_html=True)
 
-     image_data = r.get("image", "")
+        # SAFE IMAGE HANDLING
+        image_data = r.get("image", "")
 
-if image_data:
-    try:
-        st.image(base64.b64decode(image_data))
-    except:
-        st.warning("Image could not be displayed")
+        if image_data:
+            try:
+                st.image(base64.b64decode(image_data))
+            except:
+                st.warning("Image could not be displayed")
 
     st.stop()
-
 # -----------------------------
 # DRIVER
 # -----------------------------
