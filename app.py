@@ -2,6 +2,39 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import os, csv
+import base64
+
+# -----------------------------
+# CONFIG
+# -----------------------------
+st.set_page_config(page_title="POD System", layout="centered")
+
+# -----------------------------
+# HEADER STYLE
+# -----------------------------
+st.markdown("""
+<style>
+.header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+}
+.card {
+    padding:15px;
+    border-radius:12px;
+    background-color:#ffffff;
+    margin-bottom:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+.stButton>button {
+    height:50px;
+    width:100%;
+    border-radius:10px;
+    font-size:16px;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # -----------------------------
 # LOGIN
@@ -48,7 +81,20 @@ if not st.session_state.auth["ok"]:
     st.stop()
 
 # -----------------------------
-# MANAGER FILE + DATE
+# HEADER BAR
+# -----------------------------
+col1, col2 = st.columns([4,1])
+
+with col1:
+    st.markdown("### 🚚 POD System")
+
+with col2:
+    if st.button("Logout"):
+        st.session_state.auth = {"ok": False, "role": None, "driver": None}
+        st.rerun()
+
+# -----------------------------
+# DATE + FILE HANDLING
 # -----------------------------
 today = datetime.now().strftime("%Y-%m-%d")
 
@@ -70,9 +116,9 @@ if st.session_state.auth["role"] == "manager":
         st.sidebar.success(f"Saved for {today}")
 
     files = sorted(os.listdir("data"), reverse=True) if os.path.exists("data") else []
-    selected_file = st.sidebar.selectbox("📅 View date", ["Today"] + files)
+    selected = st.sidebar.selectbox("📅 View date", ["Today"] + files)
 
-    if selected_file == "Today":
+    if selected == "Today":
         if os.path.exists("current_day.txt"):
             raw = pd.read_csv("current_day.txt", sep="\t")
             selected_date = today
@@ -80,19 +126,19 @@ if st.session_state.auth["role"] == "manager":
             st.warning("Upload today's file")
             st.stop()
     else:
-        raw = pd.read_csv(f"data/{selected_file}", sep="\t")
-        selected_date = selected_file.replace(".txt", "")
+        raw = pd.read_csv(f"data/{selected}", sep="\t")
+        selected_date = selected.replace(".txt", "")
 
 else:
     if os.path.exists("current_day.txt"):
         raw = pd.read_csv("current_day.txt", sep="\t")
         selected_date = today
     else:
-        st.warning("🚧 Waiting for today's delivery file")
+        st.warning("Waiting for today's file")
         st.stop()
 
 # -----------------------------
-# CLEAN DATA
+# DATA CLEAN
 # -----------------------------
 route_map = pd.read_csv("route_map.csv")
 
@@ -114,7 +160,7 @@ jobs["driver"] = jobs["driver"].fillna("Unassigned")
 jobs["route"] = jobs["route"].fillna("Unknown")
 
 # -----------------------------
-# POD FILE BY DATE
+# POD STORAGE BY DATE
 # -----------------------------
 os.makedirs("deliveries", exist_ok=True)
 pod_file = f"deliveries/{selected_date}.csv"
@@ -133,7 +179,7 @@ jobs = jobs[~jobs["order_id"].astype(str).isin(done_ids)]
 # -----------------------------
 if st.session_state.auth["role"] == "manager":
 
-    st.title(f"📊 Manager Dashboard ({selected_date})")
+    st.title(f"📊 Dashboard ({selected_date})")
 
     st.subheader("📦 Deliveries")
     st.dataframe(jobs[["driver", "route", "customer", "order_id"]])
@@ -141,19 +187,21 @@ if st.session_state.auth["role"] == "manager":
     st.subheader("📸 PODs")
 
     if not completed.empty:
-        i = st.selectbox(
+        idx = st.selectbox(
             "Select delivery",
             completed.index,
-            format_func=lambda x: f"{completed.loc[x,'customer']} ({completed.loc[x,'driver']})"
+            format_func=lambda i: f"{completed.loc[i,'customer']} ({completed.loc[i,'driver']})"
         )
 
-        r = completed.loc[i]
-        st.write(r)
+        r = completed.loc[idx]
 
-        if pd.notna(r.get("image")):
-            path = f"photos/{r['image']}"
-            if os.path.exists(path):
-                st.image(path)
+        st.markdown(f"""
+        <div class="card">
+        <b>{r['customer']}</b><br>
+        Driver: {r['driver']}<br>
+        Time: {r['time']}
+        </div>
+        """, unsafe_allow_html=True)
 
     else:
         st.info("No PODs yet")
@@ -169,35 +217,33 @@ st.title(f"🚚 {driver}")
 driver_jobs = jobs[jobs["driver"] == driver]
 
 if driver_jobs.empty:
-    st.success("🎉 All deliveries complete")
+    st.success("All deliveries complete")
     st.stop()
 
 idx = st.selectbox(
-    "Select Delivery",
+    "Select delivery",
     driver_jobs.index,
     format_func=lambda i: driver_jobs.loc[i, "customer"]
 )
 
 row = driver_jobs.loc[idx]
 
-customer = row["customer"]
-order_id = row["order_id"]
-route = row["route"]
+st.markdown(f"""
+<div class="card">
+<b>{row['customer']}</b><br>
+Order: {row['order_id']}<br>
+Route: {row['route']}
+</div>
+""", unsafe_allow_html=True)
 
-st.write(customer)
-st.write(order_id)
-
-# -----------------------------
-# SAVE POD (DATE BASED)
-# -----------------------------
-if st.button("✅ Confirm Delivery"):
+if st.button("Confirm Delivery"):
 
     data = {
         "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "driver": driver,
-        "route": route,
-        "customer": customer,
-        "order_id": order_id
+        "route": row["route"],
+        "customer": row["customer"],
+        "order_id": row["order_id"]
     }
 
     df = pd.DataFrame([data])
@@ -211,5 +257,5 @@ if st.button("✅ Confirm Delivery"):
         quoting=csv.QUOTE_ALL
     )
 
-    st.success("Saved")
+    st.success("Delivery saved")
     st.rerun()
