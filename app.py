@@ -1,28 +1,36 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(page_title="POD System", layout="centered")
 
 # -----------------------------
-# GOOGLE SHEETS SETUP
+# SAFE GOOGLE SHEETS CONNECTION
 # -----------------------------
-scope = [
-    "https://spreadsheets.google.com/feeds",
-    "https://www.googleapis.com/auth/drive"
-]
+sheet = None
 
-creds_dict = st.secrets["gcp_service_account"]
+try:
+    import gspread
+    from oauth2client.service_account import ServiceAccountCredentials
 
-creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
-client = gspread.authorize(creds)
+    scope = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/drive"
+    ]
 
-sheet = client.open("POD_DATA").sheet1
+    creds_dict = st.secrets["gcp_service_account"]
+
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+    client = gspread.authorize(creds)
+
+    sheet = client.open("POD_DATA").sheet1
+
+except Exception as e:
+    st.error("Google Sheets connection failed ❌")
+    st.code(str(e))
 
 # -----------------------------
-# SESSION STATE
+# SESSION
 # -----------------------------
 if "auth" not in st.session_state:
     st.session_state.auth = {"ok": False, "role": None, "driver": None}
@@ -83,14 +91,14 @@ with col2:
         st.rerun()
 
 # -----------------------------
-# LOAD COMPLETED FROM SHEET
+# LOAD DATA
 # -----------------------------
-records = sheet.get_all_records()
-completed = pd.DataFrame(records)
+if sheet:
+    records = sheet.get_all_records()
+    completed = pd.DataFrame(records)
+else:
+    completed = pd.DataFrame()
 
-# -----------------------------
-# LOAD TODAY'S JOBS
-# -----------------------------
 try:
     raw = pd.read_csv("current_day.txt", sep="\t")
 except:
@@ -114,25 +122,9 @@ jobs["customer"] = jobs["customer_x"]
 jobs = jobs.drop(columns=["customer_x","customer_y"], errors="ignore")
 
 jobs["driver"] = jobs["driver"].fillna("Unassigned")
-jobs["route"] = jobs["route"].fillna("Unknown")
 
-# REMOVE COMPLETED
 if not completed.empty:
     jobs = jobs[~jobs["order_id"].astype(str).isin(completed["order_id"].astype(str))]
-
-# -----------------------------
-# MANAGER VIEW
-# -----------------------------
-if st.session_state.auth["role"] == "manager":
-
-    st.title("📊 Manager Dashboard")
-
-    if completed.empty:
-        st.info("No deliveries yet")
-    else:
-        st.dataframe(completed)
-
-    st.stop()
 
 # -----------------------------
 # DRIVER VIEW
@@ -145,42 +137,51 @@ if driver_jobs.empty:
     st.success("All deliveries complete")
     st.stop()
 
-# Always show next job
 row = driver_jobs.iloc[0]
 
 customer = row["customer"]
 order_id = row["order_id"]
-route = row["route"]
 
 st.title(customer)
-st.write(f"Order: {order_id}")
-st.write(f"Route: {route}")
+st.write(order_id)
 
 # -----------------------------
-# CONFIRM FLOW
+# FLOW
 # -----------------------------
 if st.session_state.review:
 
     data = st.session_state.review
 
-    st.warning("⚠️ Confirm Delivery")
+    st.warning("Confirm delivery")
 
     st.write(data)
 
-    col1, col2 = st.columns(2)
+    if st.button("Confirm"):
 
-    with col1:
-        if st.button("Cancel"):
-            st.session_state.review = None
-            st.rerun()
+        if sheet:
+            new_row = [
+                data["time"],
+                data["driver"],
+                data["route"],
+                data["customer"],
+                data["order_id"],
+                data["status"],
+                data["notes"],
+                data["image"]
+            ]
 
-    with col2:
-        if st.button("Confirm"):
+            sheet.append_row(new_row)
+            st.success("Saved to Google Sheets ✅")
 
-            sheet.append_row(list(data.values()))
+        else:
+            st.error("Sheet not connected")
 
-            st.session_state.review = None
-            st.rerun()
+        st.session_state.review = None
+        st.rerun()
+
+    if st.button("Cancel"):
+        st.session_state.review = None
+        st.rerun()
 
 else:
 
@@ -196,7 +197,7 @@ else:
             st.session_state.review = {
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "driver": driver,
-                "route": route,
+                "route": row["route"],
                 "customer": customer,
                 "order_id": order_id,
                 "status": status,
