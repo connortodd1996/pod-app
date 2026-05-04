@@ -39,9 +39,6 @@ div.stButton > button {
 if "review_data" not in st.session_state:
     st.session_state.review_data = None
 
-if "submitted_job" not in st.session_state:
-    st.session_state.submitted_job = None
-
 if "auth" not in st.session_state:
     st.session_state.auth = {"ok": False, "role": None, "driver": None}
 
@@ -196,11 +193,13 @@ if driver_jobs.empty:
     st.success("All deliveries complete")
     st.stop()
 
+# ALWAYS RESET DROPDOWN (fix)
 options = driver_jobs.index.tolist()
 
 idx = st.selectbox(
     "Select Delivery",
     options,
+    index=0,
     format_func=lambda i: driver_jobs.loc[i,"customer"]
 )
 
@@ -221,15 +220,7 @@ Route: {route}
 # -----------------------------
 # FLOW
 # -----------------------------
-if st.session_state.submitted_job:
-
-    st.success("✅ Delivery Saved")
-
-    if st.button("Next Delivery"):
-        st.session_state.submitted_job = None
-        st.rerun()
-
-elif st.session_state.review_data:
+if st.session_state.review_data:
 
     data = st.session_state.review_data
 
@@ -269,7 +260,6 @@ elif st.session_state.review_data:
             )
 
             st.session_state.review_data = None
-            st.session_state.submitted_job = data
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
