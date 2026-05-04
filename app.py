@@ -17,7 +17,7 @@ if os.path.exists("logo.png"):
     logo_base64 = get_base64_image("logo.png")
 
 # -----------------------------
-# PAGE CONFIG + STYLE
+# STYLE
 # -----------------------------
 st.set_page_config(page_title="POD System", layout="centered")
 
@@ -35,8 +35,6 @@ st.markdown(f"""
 .stApp::before {{
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background: rgba(255,255,255,0.92);
@@ -65,7 +63,7 @@ h1, h2, h3, p, label {{
 """, unsafe_allow_html=True)
 
 # -----------------------------
-# LOGIN DATA
+# LOGIN
 # -----------------------------
 DRIVER_PINS = {
     "Connor": "1234",
@@ -74,12 +72,8 @@ DRIVER_PINS = {
     "Ken": "2222",
     "Mark": "3333"
 }
-
 MANAGER_PIN = "9999"
 
-# -----------------------------
-# SESSION
-# -----------------------------
 if "auth" not in st.session_state:
     st.session_state.auth = {"ok": False, "role": None, "driver": None}
 
@@ -89,9 +83,6 @@ if "review_data" not in st.session_state:
 if "submitted_job" not in st.session_state:
     st.session_state.submitted_job = None
 
-# -----------------------------
-# LOGIN
-# -----------------------------
 if not st.session_state.auth["ok"]:
 
     st.title("🚚 POD System")
@@ -122,9 +113,42 @@ if not st.session_state.auth["ok"]:
     st.stop()
 
 # -----------------------------
-# LOAD DATA
+# DAILY FILE SYSTEM
 # -----------------------------
-raw = pd.read_csv("MYOB_Transactions_2026-05-02.TXT", sep="\t")
+st.sidebar.header("📂 Daily File")
+
+uploaded_file = st.sidebar.file_uploader("Upload today's file", type=["txt"])
+
+# Save uploaded file
+if uploaded_file:
+    with open("current_day.txt", "wb") as f:
+        f.write(uploaded_file.getbuffer())
+    st.sidebar.success("File saved!")
+
+# Load saved file
+if os.path.exists("current_day.txt"):
+    raw = pd.read_csv("current_day.txt", sep="\t")
+else:
+    st.warning("Upload today's MYOB file")
+    st.stop()
+
+# -----------------------------
+# NEW DAY RESET
+# -----------------------------
+if st.sidebar.button("🧹 Start New Day"):
+    if os.path.exists("deliveries.csv"):
+        os.remove("deliveries.csv")
+    if os.path.exists("current_day.txt"):
+        os.remove("current_day.txt")
+    if os.path.exists("photos"):
+        for f in os.listdir("photos"):
+            os.remove(f"photos/{f}")
+    st.sidebar.success("New day started!")
+    st.rerun()
+
+# -----------------------------
+# DATA CLEANING
+# -----------------------------
 route_map = pd.read_csv("route_map.csv")
 
 raw.columns = raw.columns.str.strip()
@@ -145,7 +169,7 @@ jobs["driver"] = jobs["driver"].fillna("Unassigned")
 jobs["route"] = jobs["route"].fillna("Unknown")
 
 # -----------------------------
-# COMPLETED
+# COMPLETED FILTER
 # -----------------------------
 if os.path.exists("deliveries.csv"):
     completed = pd.read_csv("deliveries.csv")
@@ -245,19 +269,11 @@ Route: {route}
 st.link_button("🧭 Navigate", maps_link(customer))
 
 # -----------------------------
-# REVIEW / CONFIRM FLOW
+# CONFIRMATION FLOW
 # -----------------------------
 if st.session_state.submitted_job:
 
     st.success("✅ Delivery Saved")
-
-    st.markdown(f"""
-    <div class="card">
-    <b>{st.session_state.submitted_job['customer']}</b><br>
-    Order: {st.session_state.submitted_job['order_id']}<br>
-    Status: {st.session_state.submitted_job['status']}
-    </div>
-    """, unsafe_allow_html=True)
 
     if st.button("➡️ Next Delivery"):
         st.session_state.submitted_job = None
@@ -268,15 +284,6 @@ elif st.session_state.review_data:
     data = st.session_state.review_data
 
     st.warning("⚠️ Are you sure?")
-
-    st.markdown(f"""
-    <div class="card">
-    <b>{data['customer']}</b><br>
-    Order: {data['order_id']}<br>
-    Status: {data['status']}<br>
-    Notes: {data['notes']}
-    </div>
-    """, unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
 
