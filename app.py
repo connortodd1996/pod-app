@@ -1,9 +1,25 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-import os, csv
+import gspread
+import json
+from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(page_title="POD System", layout="centered")
+
+# -----------------------------
+# GOOGLE SHEETS SETUP
+# -----------------------------
+scope = [
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/drive"
+]
+
+creds_dict = json.loads(st.secrets["gcp_service_account"])
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+client = gspread.authorize(creds)
+
+sheet = client.open("POD_DATA").sheet1
 
 # -----------------------------
 # SESSION STATE
@@ -67,19 +83,20 @@ with col2:
         st.rerun()
 
 # -----------------------------
-# LOAD FILE
+# LOAD COMPLETED FROM SHEET
 # -----------------------------
-today = datetime.now().strftime("%Y-%m-%d")
+records = sheet.get_all_records()
+completed = pd.DataFrame(records)
 
-if not os.path.exists("current_day.txt"):
-    st.warning("Upload today's file first")
+# -----------------------------
+# LOAD TODAY'S JOBS
+# -----------------------------
+try:
+    raw = pd.read_csv("current_day.txt", sep="\t")
+except:
+    st.error("Missing current_day.txt file")
     st.stop()
 
-raw = pd.read_csv("current_day.txt", sep="\t")
-
-# -----------------------------
-# CLEAN DATA
-# -----------------------------
 route_map = pd.read_csv("route_map.csv")
 
 raw.columns = raw.columns.str.strip()
@@ -99,22 +116,9 @@ jobs = jobs.drop(columns=["customer_x","customer_y"], errors="ignore")
 jobs["driver"] = jobs["driver"].fillna("Unassigned")
 jobs["route"] = jobs["route"].fillna("Unknown")
 
-# -----------------------------
-# POD STORAGE
-# -----------------------------
-os.makedirs("deliveries", exist_ok=True)
-os.makedirs("photos", exist_ok=True)
-
-pod_file = f"deliveries/{today}.csv"
-
-if os.path.exists(pod_file):
-    completed = pd.read_csv(pod_file)
-    done_ids = completed["order_id"].astype(str)
-else:
-    completed = pd.DataFrame()
-    done_ids = []
-
-jobs = jobs[~jobs["order_id"].astype(str).isin(done_ids)]
+# REMOVE COMPLETED
+if not completed.empty:
+    jobs = jobs[~jobs["order_id"].astype(str).isin(completed["order_id"].astype(str))]
 
 # -----------------------------
 # MANAGER VIEW
@@ -123,26 +127,10 @@ if st.session_state.auth["role"] == "manager":
 
     st.title("📊 Manager Dashboard")
 
-    st.subheader("Completed Deliveries")
-
-    if not completed.empty:
-        i = st.selectbox(
-            "Select delivery",
-            completed.index,
-            format_func=lambda x: f"{completed.loc[x,'customer']} ({completed.loc[x,'driver']})"
-        )
-
-        r = completed.loc[i]
-
-        st.write(r)
-
-        if pd.notna(r.get("image")):
-            path = f"photos/{r['image']}"
-            if os.path.exists(path):
-                st.image(path)
-
+    if completed.empty:
+        st.info("No deliveries yet")
     else:
-        st.info("No deliveries completed yet")
+        st.dataframe(completed)
 
     st.stop()
 
@@ -151,35 +139,31 @@ if st.session_state.auth["role"] == "manager":
 # -----------------------------
 driver = st.session_state.auth["driver"]
 
-st.title(f"🚚 {driver}")
-
 driver_jobs = jobs[jobs["driver"] == driver]
 
 if driver_jobs.empty:
     st.success("All deliveries complete")
     st.stop()
 
-# ALWAYS show first job (NO dropdown issues)
+# Always show next job
 row = driver_jobs.iloc[0]
 
 customer = row["customer"]
 order_id = row["order_id"]
 route = row["route"]
 
-st.markdown(f"""
-### {customer}
-Order: {order_id}  
-Route: {route}
-""")
+st.title(customer)
+st.write(f"Order: {order_id}")
+st.write(f"Route: {route}")
 
 # -----------------------------
-# FLOW
+# CONFIRM FLOW
 # -----------------------------
 if st.session_state.review:
 
     data = st.session_state.review
 
-    st.warning("Confirm delivery")
+    st.warning("⚠️ Confirm Delivery")
 
     st.write(data)
 
@@ -193,16 +177,7 @@ if st.session_state.review:
     with col2:
         if st.button("Confirm"):
 
-            df = pd.DataFrame([data])
-            exists = os.path.isfile(pod_file)
-
-            df.to_csv(
-                pod_file,
-                mode="a",
-                header=not exists,
-                index=False,
-                quoting=csv.QUOTE_ALL
-            )
+            sheet.append_row(list(data.values()))
 
             st.session_state.review = None
             st.rerun()
@@ -212,19 +187,11 @@ else:
     with st.form("form"):
 
         status = st.radio("Status", ["Delivered","Failed"])
-        photo = st.file_uploader("Upload Photo", type=["jpg","png"])
         notes = st.text_area("Notes")
 
         submitted = st.form_submit_button("Submit")
 
         if submitted:
-
-            filename = None
-
-            if photo:
-                filename = f"{order_id}_{datetime.now().strftime('%H%M%S')}.jpg"
-                with open(f"photos/{filename}", "wb") as f:
-                    f.write(photo.getbuffer())
 
             st.session_state.review = {
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -234,7 +201,7 @@ else:
                 "order_id": order_id,
                 "status": status,
                 "notes": notes,
-                "image": filename
+                "image": ""
             }
 
             st.rerun()
