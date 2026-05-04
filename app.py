@@ -19,15 +19,17 @@ st.markdown("""
     margin-bottom:10px;
     box-shadow:0 2px 6px rgba(0,0,0,0.05);
 }
+button {
+    height:55px;
+    border-radius:10px;
+}
 .green button {
-    background-color:#16a34a !important;
+    background:#16a34a !important;
     color:white !important;
-    height:60px;
 }
 .red button {
-    background-color:#dc2626 !important;
+    background:#dc2626 !important;
     color:white !important;
-    height:60px;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -58,12 +60,12 @@ if "review" not in st.session_state:
 # -----------------------------
 # LOGIN
 # -----------------------------
-DRIVER_PINS = {
-    "Connor": "1234",
-    "Andy": "5678",
-    "Kelvin": "1111",
-    "Ken": "2222",
-    "Mark": "3333"
+DRIVERS = {
+    "Connor":"1234",
+    "Andy":"5678",
+    "Kelvin":"1111",
+    "Ken":"2222",
+    "Mark":"3333"
 }
 MANAGER_PIN = "9999"
 
@@ -71,14 +73,14 @@ if not st.session_state.auth["ok"]:
 
     st.title("🚚 POD System")
 
-    role = st.selectbox("Login as", ["Driver", "Manager"])
+    role = st.selectbox("Login as", ["Driver","Manager"])
 
     if role == "Driver":
-        d = st.selectbox("Driver", list(DRIVER_PINS.keys()))
+        d = st.selectbox("Driver", list(DRIVERS.keys()))
         p = st.text_input("PIN", type="password")
 
         if st.button("Login"):
-            if DRIVER_PINS.get(d) == p:
+            if DRIVERS[d] == p:
                 st.session_state.auth = {"ok": True, "role": "driver", "driver": d}
                 st.rerun()
             else:
@@ -100,12 +102,10 @@ if not st.session_state.auth["ok"]:
 # HEADER
 # -----------------------------
 col1, col2 = st.columns([4,1])
-with col1:
-    st.markdown("### 🚚 POD System")
-with col2:
-    if st.button("Logout"):
-        st.session_state.auth = {"ok": False, "role": None, "driver": None}
-        st.rerun()
+col1.markdown("### 🚚 POD System")
+if col2.button("Logout"):
+    st.session_state.auth = {"ok": False, "role": None, "driver": None}
+    st.rerun()
 
 # -----------------------------
 # LOAD DATA
@@ -114,25 +114,24 @@ records = sheet.get_all_records()
 completed = pd.DataFrame(records)
 
 raw = pd.read_csv("current_day.txt", sep="\t")
-route_map = pd.read_csv("route_map.csv")
+routes = pd.read_csv("route_map.csv")
 
 raw.columns = raw.columns.str.strip()
-route_map.columns = route_map.columns.str.strip()
+routes.columns = routes.columns.str.strip()
 
-clean = raw[["Co./Last Name", "Invoice No.", "Record ID"]].dropna().drop_duplicates()
-clean.columns = ["customer", "order_id", "zone"]
+clean = raw[["Co./Last Name","Invoice No.","Record ID"]].dropna().drop_duplicates()
+clean.columns = ["customer","order_id","zone"]
 
-clean["key"] = clean["customer"].str.strip().str.lower()
-route_map["key"] = route_map["customer"].str.strip().str.lower()
+clean["key"] = clean["customer"].str.lower().str.strip()
+routes["key"] = routes["customer"].str.lower().str.strip()
 
-jobs = clean.merge(route_map, on="key", how="left")
+jobs = clean.merge(routes, on="key", how="left")
 
 jobs["customer"] = jobs["customer_x"]
 jobs = jobs.drop(columns=["customer_x","customer_y"], errors="ignore")
 
 jobs["driver"] = jobs["driver"].fillna("Unassigned")
 
-# Remove completed
 if not completed.empty:
     jobs = jobs[~jobs["order_id"].astype(str).isin(completed["order_id"].astype(str))]
 
@@ -147,25 +146,25 @@ if st.session_state.auth["role"] == "manager":
         st.info("No deliveries yet")
     else:
         i = st.selectbox(
-            "Select Delivery",
+            "Select POD",
             completed.index,
             format_func=lambda x: completed.loc[x,"customer"]
         )
 
-        row = completed.loc[i]
+        r = completed.loc[i]
 
         st.markdown(f"""
         <div class="card">
-        <b>{row['customer']}</b><br>
-        Order: {row['order_id']}<br>
-        Driver: {row['driver']}<br>
-        Status: {row['status']}<br>
-        Notes: {row['notes']}
+        <b>{r['customer']}</b><br>
+        Order: {r['order_id']}<br>
+        Driver: {r['driver']}<br>
+        Status: {r['status']}<br>
+        Notes: {r['notes']}
         </div>
         """, unsafe_allow_html=True)
 
-        if row["image"]:
-            st.image(base64.b64decode(row["image"]))
+        if r["image"]:
+            st.image(base64.b64decode(r["image"]))
 
     st.stop()
 
@@ -173,14 +172,21 @@ if st.session_state.auth["role"] == "manager":
 # DRIVER
 # -----------------------------
 driver = st.session_state.auth["driver"]
-
 driver_jobs = jobs[jobs["driver"] == driver]
 
 if driver_jobs.empty:
     st.success("All deliveries complete")
     st.stop()
 
-row = driver_jobs.iloc[0]
+options = driver_jobs.index.tolist()
+
+idx = st.selectbox(
+    "Select Delivery",
+    options,
+    format_func=lambda i: driver_jobs.loc[i,"customer"]
+)
+
+row = driver_jobs.loc[idx]
 
 customer = row["customer"]
 order_id = row["order_id"]
@@ -199,47 +205,36 @@ Route: {route}
 # -----------------------------
 if st.session_state.review:
 
-    data = st.session_state.review
+    d = st.session_state.review
 
-    st.warning("⚠️ Confirm Delivery")
+    st.warning("Confirm Delivery")
 
     st.markdown(f"""
     <div class="card">
-    <b>{data['customer']}</b><br>
-    Order: {data['order_id']}<br>
-    Status: {data['status']}<br>
-    Notes: {data['notes']}
+    <b>{d['customer']}</b><br>
+    Order: {d['order_id']}<br>
+    Status: {d['status']}<br>
+    Notes: {d['notes']}
     </div>
     """, unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
+    c1, c2 = st.columns(2)
 
-    with col1:
-        st.markdown('<div class="red">', unsafe_allow_html=True)
+    with c1:
         if st.button("Cancel"):
             st.session_state.review = None
             st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
-    with col2:
-        st.markdown('<div class="green">', unsafe_allow_html=True)
+    with c2:
         if st.button("Confirm"):
 
-            new_row = [
-                data["time"],
-                data["driver"],
-                data["route"],
-                data["customer"],
-                data["order_id"],
-                data["status"],
-                data["notes"],
-                data["image"]
-            ]
-
-            sheet.append_row(new_row)
+            sheet.append_row([
+                d["time"], d["driver"], d["route"],
+                d["customer"], d["order_id"],
+                d["status"], d["notes"], d["image"]
+            ])
 
             st.session_state.review = None
-            st.success("Saved ✅")
             st.rerun()
 
 else:
@@ -253,13 +248,13 @@ else:
         if photo:
             st.image(photo)
 
-        submitted = st.form_submit_button("Submit")
+        submit = st.form_submit_button("Submit")
 
-        if submitted:
+        if submit:
 
-            image_data = ""
+            img = ""
             if photo:
-                image_data = base64.b64encode(photo.read()).decode()
+                img = base64.b64encode(photo.read()).decode()
 
             st.session_state.review = {
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -269,7 +264,7 @@ else:
                 "order_id": order_id,
                 "status": status,
                 "notes": notes,
-                "image": image_data
+                "image": img
             }
 
             st.rerun()
