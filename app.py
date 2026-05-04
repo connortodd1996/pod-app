@@ -6,7 +6,7 @@ import os, csv
 st.set_page_config(page_title="POD System", layout="centered")
 
 # -----------------------------
-# STYLE (MOBILE BUTTONS)
+# STYLE
 # -----------------------------
 st.markdown("""
 <style>
@@ -36,9 +36,6 @@ div.stButton > button {
 # -----------------------------
 # SESSION STATE
 # -----------------------------
-if "selected_job" not in st.session_state:
-    st.session_state.selected_job = None
-
 if "review_data" not in st.session_state:
     st.session_state.review_data = None
 
@@ -201,14 +198,10 @@ if driver_jobs.empty:
 
 options = driver_jobs.index.tolist()
 
-if st.session_state.selected_job not in options:
-    st.session_state.selected_job = options[0]
-
 idx = st.selectbox(
     "Select Delivery",
     options,
-    format_func=lambda i: driver_jobs.loc[i,"customer"],
-    key="selected_job"
+    format_func=lambda i: driver_jobs.loc[i,"customer"]
 )
 
 row = driver_jobs.loc[idx]
@@ -277,7 +270,6 @@ elif st.session_state.review_data:
 
             st.session_state.review_data = None
             st.session_state.submitted_job = data
-            st.session_state.selected_job = None
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
