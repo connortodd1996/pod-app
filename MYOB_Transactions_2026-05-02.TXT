@@ -1,0 +1,1026 @@
+
+Co./Last Name							Invoice No.	Date				Item Number	Quantity	Description																																		Record ID
+St Chad's College Durham							F53117684	02/05/2026				LIB	1	Lettuce - Iceberg																																		CH3
+St Chad's College Durham							F53117684	02/05/2026				CS5	4	Carrots - Sliced																																		CH3
+St Chad's College Durham							F53117684	02/05/2026				BRB	4	Broccoli																																		CH3
+St Chad's College Durham							F53117684	02/05/2026				CG2	2	Carrots Grated																																		CH3
+St Chad's College Durham							F53117684	02/05/2026				CM2	2	Coleslaw - Mix																																		CH3
+
+Mr B's Bakery							F52860683	02/05/2026				RCL	6	Chips - Raw Chunky																																		MR2
+
+The Green Tree Spennymoor							F53161469	02/05/2026				SD5	3	Swedes - Diced																																		GR3
+The Green Tree Spennymoor							F53161469	02/05/2026				RCL	3	Chips - Raw Chunky																																		GR3
+The Green Tree Spennymoor							F53161469	02/05/2026				P10	4	Potatoes - Peeled Standard (blue bag)																																		GR3
+
+D&A diner							F52888106	02/05/2026				E	1	Eggs																																		DA5
+D&A diner							F52888106	02/05/2026				CB5	1	Carrots - Batons																																		DA5
+D&A diner							F52888106	02/05/2026				SD5	1	Swedes - Diced																																		DA5
+D&A diner							F52888106	02/05/2026				CGS2	1	Cabbage - Green (Shredded) Vac Pac																																		DA5
+
+Haswell Homer Hill Farm Shop Ltd							F53162844	02/05/2026				P10L	6	Potatoes - Peeled Large																																		HA6
+
+All Saints Community Centre							F53159837	02/05/2026				T7	1	Apples - Solid Pack																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				PQ10	2	Potatoes - Cut (Roast)																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				CS5	1	Carrots - Sliced																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				CS2	1	Carrots - Sliced																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				SD2	1	Swedes - Diced																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				SD5	1	Swedes - Diced																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				PAQ2	1	Parsnips - Quartered Prepared																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				T11S	2	Peas - Mushy																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				CB1	1	Cling Film																																		AL2
+All Saints Community Centre							F53159837	02/05/2026				CGS	2	Cabbage - Green (Shredded) **NOT Vac Pac**																																		AL2
+
+University Hospital of North Durham (R)							F53153599	02/05/2026				AG	12	Apples - Golden																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				AR	12	Apples - Red																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				BK	6	Bananas																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				CG2	2	Carrots Grated																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				CM2	2	Coleslaw - Mix																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				E	2	Eggs																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				JB4	2	Potatoes - Jacket 40's																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				MB6	4	Mushrooms - Button (Medium)																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				O	10	Oranges - Medium																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				OI	2	Oil - Pure Vegetable																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				ONK	2	Onions - Dutch																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				ORK	2	Onions - Red																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				P	10	Pears																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				PG	5	Peppers - Green																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				PR	5	Peppers - Red																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				PY	5	Peppers - Yellow																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				RCL	6	Chips - Raw Chunky																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				SD2	2	Swedes - Diced																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				SO	2	Spring Onions																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				SP	2	Spinach																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				TCP	10	Tomatoes - Cherry																																		UN3
+University Hospital of North Durham (R)							F53153599	02/05/2026				TB	1	Tomatoes																																		UN3
+
+China China Durham							F53165071	02/05/2026				RCL	23	Chips - Raw Chunky																																		CH19
+
+Thomas Wrighthouse							F53161457	02/05/2026				CW	1	Cabbage - White																																		TH
+Thomas Wrighthouse							F53161457	02/05/2026				CAK	2	Carrots																																		TH
+Thomas Wrighthouse							F53161457	02/05/2026				RCL	2	Chips - Raw Chunky																																		TH
+Thomas Wrighthouse							F53161457	02/05/2026				BABP	3	Corn - Baby																																		TH
+Thomas Wrighthouse							F53161457	02/05/2026				HM5	1	Herbs - Micro Leaves																																		TH
+Thomas Wrighthouse							F53161457	02/05/2026				LE	10	Lemons																																		TH
+Thomas Wrighthouse							F53161457	02/05/2026				LIM	10	Limes																																		TH
+Thomas Wrighthouse							F53161457	02/05/2026				MA20	2	Mangetout																																		TH
+Thomas Wrighthouse							F53161457	02/05/2026				PEC	4	Pea Shoots																																		TH
+
+The Courtyard Cafe Bar at The Arts Centre							F53161384	02/05/2026				RCL	5	Chips - Raw Chunky																																		CO
+
+Cottage Cafe Spennymoor							F52888108	02/05/2026				SD5	4	Swedes - Diced																																		CO19
+Cottage Cafe Spennymoor							F52888108	02/05/2026				CGS2	3	Cabbage - Green (Shredded) Vac Pac																																		CO19
+Cottage Cafe Spennymoor							F52888108	02/05/2026				CS5	3	Carrots - Sliced																																		CO19
+Cottage Cafe Spennymoor							F52888108	02/05/2026				PQ10	4	Potatoes - Cut (Roast)																																		CO19
+
+University Hospital of North Durham (PA)							F53153556	02/05/2026				AG	60	Apples - Golden																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				AR	60	Apples - Red																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				BK	4	Bananas																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				CG2	1	Carrots Grated																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				CU	8	Cucumber																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				LW	6	Salad - Bryans Leafy Salad																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				P	50	Pears																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				SA	60	Satsumas																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				TCP	6	Tomatoes - Cherry																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				TB	1	Tomatoes																																		UN5
+University Hospital of North Durham (PA)							F53153556	02/05/2026				BB40	1	Bananas																																		UN5
+
+Tung Fong (Blue Hut)							F53161263	02/05/2026				RCL	3	Chips - Raw Chunky																																		TU3
+
+Tung Fong (Blue Hut)							F53152026	02/05/2026				RCL	6	Chips - Raw Chunky																																		TU3
+Tung Fong (Blue Hut)							F53152026	02/05/2026				Key	1	Key																																		TU3
+
+m and j cateringltd							F53023277	02/05/2026				PJ	3	Potatoes - Jumbo																																		WH5
+m and j cateringltd							F53023277	02/05/2026				CAB	2	Carrots																																		WH5
+m and j cateringltd							F53023277	02/05/2026				SWB	2	Swedes																																		WH5
+m and j cateringltd							F53023277	02/05/2026				LEB	1	Leeks																																		WH5
+m and j cateringltd							F53023277	02/05/2026				HR	1	Herb - Rosemary																																		WH5
+m and j cateringltd							F53023277	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		WH5
+
+The Park Hotel Redcar							F53148682	02/05/2026				B	10	Bananas																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				CGS2	6	Cabbage - Green (Shredded) Vac Pac																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				CS5	4	Carrots - Sliced																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				CFB	5	Cauliflower																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				C	1	Celery																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				GMO	2	Cheese - Mozzarella Grated																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				C17	3	Cheese - Soprano Red Grated																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				RCL	7	Chips - Raw Chunky																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				CLM1	1	Coleslaw - Mix with Red & White Cabbage																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				CU	6	Cucumber																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				LI	6	Lettuce - Iceberg																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				ONC	5.08	Onions - Chilli																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				PEC	4	Pea Shoots																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				PG	4	Peppers - Green																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				PR	4	Peppers - Red																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				PC1	13	Potatoes - Clean Cut																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				PRP	1	Potato Red Skin																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				LW	1	Salad - Bryans Leafy Salad																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				SA	10	Satsumas																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				SMF2	1	Soup Mix - Fine Cut																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				SD5	10	Swedes - Diced																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				TBBS	2	Tomatoes - Beef																																		PA
+The Park Hotel Redcar							F53148682	02/05/2026				TCP	6	Tomatoes - Cherry																																		PA
+
+The Priory Bistro							F53157803	02/05/2026				CRE	1	Cabbage - Red																																		PR2
+The Priory Bistro							F53157803	02/05/2026				RCL	1	Chips - Raw Chunky																																		PR2
+The Priory Bistro							F53157803	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		PR2
+The Priory Bistro							F53157803	02/05/2026				ORK	2	Onions - Red																																		PR2
+The Priory Bistro							F53157803	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		PR2
+The Priory Bistro							F53157803	02/05/2026				LW	4	Salad - Bryans Leafy Salad																																		PR2
+The Priory Bistro							F53157803	02/05/2026				SO	1	Spring Onions																																		PR2
+The Priory Bistro							F53157803	02/05/2026				TK	2	Tomatoes																																		PR2
+
+Al forno							F53162381	02/05/2026				BERB	1	Blackberries																																		AL7
+Al forno							F53162381	02/05/2026				BERBL	2	Blueberries																																		AL7
+Al forno							F53162381	02/05/2026				CU1	1	Cucumber																																		AL7
+Al forno							F53162381	02/05/2026				LI	6	Lettuce - Iceberg																																		AL7
+Al forno							F53162381	02/05/2026				MP	1	Peppers - Mixed																																		AL7
+Al forno							F53162381	02/05/2026				TC	2	Tomatoes - Cherry (Tray)																																		AL7
+Al forno							F53162381	02/05/2026				LIMB	1	Limes																																		AL7
+Al forno							F53162381	02/05/2026				LE	25	Lemons																																		AL7
+Al forno							F53162381	02/05/2026				RASP	2	Raspberries																																		AL7
+Al forno							F53162381	02/05/2026				S5	3	Strawberries																																		AL7
+Al forno							F53162381	02/05/2026				HM	1	Herb - Mint																																		AL7
+Al forno							F53162381	02/05/2026				HB	1	Herb - Basil																																		AL7
+Al forno							F53162381	02/05/2026				PAK	1	Parsley - Curly																																		AL7
+Al forno							F53162381	02/05/2026				HR2	3	Micro Herb - Red Amaranth																																		AL7
+
+The Yorkshire Lass New Marske							F53161197	02/05/2026				PJB	2	Potatoes - Washed																																		YO5
+
+Crazy Corner Adventure Play Centre Ltd							F53145578	02/05/2026				RCL	2	Chips - Raw Chunky																																		CR
+
+The Queens Arms Brotton							F53165963	02/05/2026				BRK	1	Broccoli																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				CB5	1	Carrots - Batons																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				C16	2	Cheese - Red Grated																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				CHIRK	0.25	Chillies - Red																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				RCL	2	Chips - Raw Chunky																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				HC	1	Herb - Chives																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				MSS2	1	Milk - Semi Skimmed (Green Top)																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				PEC	1	Pea Shoots																																		QU
+The Queens Arms Brotton							F53165963	02/05/2026				LW	2	Salad - Bryans Leafy Salad																																		QU
+
+Reunion Bar & Restaurant Loftus							F53159303	02/05/2026				ORB	1	Onions - Red																																		SH2
+Reunion Bar & Restaurant Loftus							F53159303	02/05/2026				MSFC	1	Mushrooms - Sliced Fine Cut																																		SH2
+Reunion Bar & Restaurant Loftus							F53159303	02/05/2026				RCL	20	Chips - Raw Chunky																																		SH2
+
+Wheatsheaf Inn Hutton Rudby							F53168777	02/05/2026				FEE	1	Service Fee																																		WH1
+Wheatsheaf Inn Hutton Rudby							F53168777	02/05/2026				RCL	3	Chips - Raw Chunky																																		WH1
+Wheatsheaf Inn Hutton Rudby							F53168777	02/05/2026				PQ10	8	Potatoes - Cut (Roast)																																		WH1
+Wheatsheaf Inn Hutton Rudby							F53168777	02/05/2026				LI	6	Lettuce - Iceberg																																		WH1
+
+Reunion Bar & Restaurant Loftus							F52886184	02/05/2026				PQ10	5	Potatoes - Cut (Roast)																																		SH2
+Reunion Bar & Restaurant Loftus							F52886184	02/05/2026				GAB	1	Garlic - Peeled																																		SH2
+
+Munchies Eston							F53167192	02/05/2026				RCL	18	Chips - Raw Chunky																																		MU2
+Munchies Eston							F53167192	02/05/2026				Key	1	Key																																		MU2
+
+Badger's Bar - Guisborough							F53166813	02/05/2026				HM	1	Herb - Mint																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				LE	2	Lemons																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				LIM	1	Limes																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				MU	1	Mushrooms - Open White Flats																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				ONC	1	Onions - Chilli																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				O	1	Oranges - Medium																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				PFB	2	Passionfruit																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				LW	2	Salad - Bryans Leafy Salad																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				TK	1	Tomatoes																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				PAK	1	Parsley - Curly																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				HC	1	Herb - Chives																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				PR	2	Peppers - Red																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				PY	2	Peppers - Yellow																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				LEE	1	Leeks																																		BA4
+Badger's Bar - Guisborough							F53166813	02/05/2026				PARK	1	Parsnip																																		BA4
+
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				LI	3	Lettuce - Iceberg																																		MJ
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				MB6	4	Mushrooms - Button (Medium)																																		MJ
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				MWW	1	Mushrooms - Wild																																		MJ
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				PEC	3	Pea Shoots																																		MJ
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				TEN	3	Salad - Tender Leaves																																		MJ
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				SP	2	Spinach																																		MJ
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				TK	1	Tomatoes																																		MJ
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				TCP	1	Tomatoes - Cherry																																		MJ
+MJ'S Cake Cafe Ltd							F53157225	02/05/2026				JB4	1	Potatoes - Jacket 40's																																		MJ
+
+Gemini's Pizzas Redcar							F52888051	02/05/2026				RC14	2	Chips - Raw Fish Shop																																		GE8
+Gemini's Pizzas Redcar							F52888051	02/05/2026				Key	1	Key																																		GE8
+
+World of Play							F53159575	02/05/2026				CAK	1	Carrots																																		WO1
+World of Play							F53159575	02/05/2026				ONC	1	Onions - Chilli																																		WO1
+World of Play							F53159575	02/05/2026				ORK	1	Onions - Red																																		WO1
+World of Play							F53159575	02/05/2026				CW	1	Cabbage - White																																		WO1
+World of Play							F53159575	02/05/2026				C17	1	Cheese - Soprano Red Grated																																		WO1
+World of Play							F53159575	02/05/2026				POR	11	Chips - Chunky (Vacuum Pack)																																		WO1
+World of Play							F53159575	02/05/2026				PR	3	Peppers - Red																																		WO1
+World of Play							F53159575	02/05/2026				PY	3	Peppers - Yellow																																		WO1
+
+The Downe Arms Inn							F53164585	02/05/2026				KFB	10	Kale																																		DO1
+The Downe Arms Inn							F53164585	02/05/2026				LOB	4	Lettuce - Lollo Bionda																																		DO1
+The Downe Arms Inn							F53164585	02/05/2026				HCC	2	Chips - Chunky Skin On Prepared 20mm																																		DO1
+The Downe Arms Inn							F53164585	02/05/2026				PJ	1	Potatoes - Jumbo																																		DO1
+
+Cod & Lobster Staithes							F53163560	02/05/2026				WCD4	10	Cream - Double																																		CO4
+Cod & Lobster Staithes							F53163560	02/05/2026				C17B	1	Cheese - Soprano Red Grated																																		CO4
+Cod & Lobster Staithes							F53163560	02/05/2026				C17	1	Cheese - Soprano Red Grated																																		CO4
+
+The Apple Tree - Marton							F53167931	02/05/2026				P10	8	Potatoes - Peeled Standard (blue bag)																																		AP4
+The Apple Tree - Marton							F53167931	02/05/2026				TK	2	Tomatoes																																		AP4
+The Apple Tree - Marton							F53167931	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		AP4
+The Apple Tree - Marton							F53167931	02/05/2026				LOL	4	Lettuce - Lollo Rosso																																		AP4
+The Apple Tree - Marton							F53167931	02/05/2026				LI	2	Lettuce - Iceberg																																		AP4
+The Apple Tree - Marton							F53167931	02/05/2026				LC	1	Lettuce - Endive Curly																																		AP4
+The Apple Tree - Marton							F53167931	02/05/2026				KFB	6	Kale																																		AP4
+The Apple Tree - Marton							F53167931	02/05/2026				CF2	2	Cauliflower - Prepared																																		AP4
+The Apple Tree - Marton							F53167931	02/05/2026				LC	3	Lettuce - Endive Curly																																		AP4
+
+The Peppermill Cafe							F53103786	02/05/2026				C17	2	Cheese - Soprano Red Grated																																		PE3
+The Peppermill Cafe							F53103786	02/05/2026				RCL	2	Chips - Raw Chunky																																		PE3
+
+Beach Road Fisheries							F53160677	02/05/2026				RC14	6	Chips - Raw Fish Shop																																		BE6
+
+Panda Chinese Restaurant							F53163762	02/05/2026				RC14	11	Chips - Raw Fish Shop																																		PA6
+
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				AG	8	Apples - Golden																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				AR	8	Apples - Red																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				BK	13	Bananas																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				CG2	2	Carrots Grated																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				CM2	1	Coleslaw - Mix																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				CR2	1	Cabbage - Red Shredded																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				PPDM	26	Potatoes Peeled 10KG NHS																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				PSDM	13	Potatoes Peeled 5kg NHS																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				PW1	3	Potatoes - Wedges Skin On																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				RCL	2	Chips - Raw Chunky																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				SA	12	Satsumas																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				SD5	2	Swedes - Diced																																		DA9
+Darlington Memorial Hospital CPU							F53055153	02/05/2026				SMC	11	Soup Mix - Fine Cut with Celery																																		DA9
+
+Darlington Memorial Hospital CPU							F53148676	02/05/2026				OS2	4	Onions - Sliced																																		DA9
+
+Darlington Memorial Hospital CPU							F53153497	02/05/2026				PD1	8	Potatoes - Diced 10mm																																		DA9
+
+China China Darlington							F53166738	02/05/2026				RCL	19	Chips - Raw Chunky																																		CH10
+China China Darlington							F53166738	02/05/2026				Key	1	Key																																		CH10
+
+STAFF Tracys							F53144271	02/05/2026				AG	5	Apples - Golden																																		STAFF - TRACY
+STAFF Tracys							F53144271	02/05/2026				AR	5	Apples - Red																																		STAFF - TRACY
+STAFF Tracys							F53144271	02/05/2026				B	10	Bananas																																		STAFF - TRACY
+STAFF Tracys							F53144271	02/05/2026				BERBL	1	Blueberries																																		STAFF - TRACY
+STAFF Tracys							F53144271	02/05/2026				GBK	1	Grapes - Black																																		STAFF - TRACY
+STAFF Tracys							F53144271	02/05/2026				J5	10	Potatoes - Jacket 50's																																		STAFF - TRACY
+STAFF Tracys							F53144271	02/05/2026				SA	5	Satsumas																																		STAFF - TRACY
+
+The Duke of York Inn Crook							F53162260	02/05/2026				PJB	2	Potatoes - Washed																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				LEE	1	Leeks																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				PAKFL	2	Parsley - Flat Leaf Loose																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				BERBL	1	Blueberries																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				GBK	1	Grapes - Black																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				GAB	1	Garlic - Peeled																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				LW	4	Salad - Bryans Leafy Salad																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				WCD4	6	Cream - Double																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				MSS2	2	Milk - Semi Skimmed (Green Top)																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				CHIRK	0.2	Chillies - Red																																		DU
+The Duke of York Inn Crook							F53162260	02/05/2026				E	1	Eggs																																		DU
+
+Holiday Inn Darlington North							F53168096	02/05/2026				FEE	1	Service Fee																																		HO6
+Holiday Inn Darlington North							F53168096	02/05/2026				E	3	Eggs																																		HO6
+Holiday Inn Darlington North							F53168096	02/05/2026				ONC	5	Onions - Chilli																																		HO6
+Holiday Inn Darlington North							F53168096	02/05/2026				MP	1	Peppers - Mixed																																		HO6
+Holiday Inn Darlington North							F53168096	02/05/2026				OI	1	Oil - Pure Vegetable																																		HO6
+Holiday Inn Darlington North							F53168096	02/05/2026				T75	1	Blue Centrefeed Rolls 2ply 170mmx150mtr																																		HO6
+Holiday Inn Darlington North							F53168096	02/05/2026				D4	1	Juice - Orange																																		HO6
+Holiday Inn Darlington North							F53168096	02/05/2026				D7	1	Juice - Apple																																		HO6
+
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				LB	8	Lettuce - Baby Gem																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				JB5	1	Potatoes - Jacket 50's																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				S5	4	Strawberries																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				SD5	2	Swedes - Diced																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				RCL	2	Chips - Raw Chunky																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				CGS2	2	Cabbage - Green (Shredded) Vac Pac																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				CFB	1	Cauliflower																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				ONC	6	Onions - Chilli																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				OI	1	Oil - Pure Vegetable																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				EB	1	Eggs																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				TEN	6	Salad - Tender Leaves																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				CP5	2	Carrots - Peeled																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				BABP	3	Corn - Baby																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				BSP	2	Bean Sprouts																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				SPS	2	Scourer Sponge 																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				PG	2	Peppers - Green																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				PR	2	Peppers - Red																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				PY	2	Peppers - Yellow																																		WA3
+Walworth Castle Hotel (Millwood Hotels)							F53158077	02/05/2026				C17	1	Cheese - Soprano Red Grated																																		WA3
+
+The Burtree Inn							F53165427	02/05/2026				C17B	1	Cheese - Soprano Red Grated																																		BR2
+The Burtree Inn							F53165427	02/05/2026				E	2	Eggs																																		BR2
+The Burtree Inn							F53165427	02/05/2026				C17B	1	Cheese - Soprano Red Grated																																		BR2
+
+Planet Leisure							F53155104	02/05/2026				BUT	4	Butter - Unsalted																																		PL2
+Planet Leisure							F53155104	02/05/2026				LI	6	Lettuce - Iceberg																																		PL2
+Planet Leisure							F53155104	02/05/2026				LB	6	Lettuce - Baby Gem																																		PL2
+Planet Leisure							F53155104	02/05/2026				LC1	6	Lettuce - Cos																																		PL2
+Planet Leisure							F53155104	02/05/2026				CU	5	Cucumber																																		PL2
+Planet Leisure							F53155104	02/05/2026				MP	1	Peppers - Mixed																																		PL2
+Planet Leisure							F53155104	02/05/2026				ORK	5	Onions - Red																																		PL2
+Planet Leisure							F53155104	02/05/2026				SO	6	Spring Onions																																		PL2
+Planet Leisure							F53155104	02/05/2026				ONC	3	Onions - Chilli																																		PL2
+Planet Leisure							F53155104	02/05/2026				GMO	3	Cheese - Mozzarella Grated																																		PL2
+Planet Leisure							F53155104	02/05/2026				HC	1	Herb - Chives																																		PL2
+Planet Leisure							F53155104	02/05/2026				RCT	4	Chips - Chunky Premium																																		PL2
+Planet Leisure							F53155104	02/05/2026				LE	4	Lemons																																		PL2
+Planet Leisure							F53155104	02/05/2026				LIM	3	Limes																																		PL2
+Planet Leisure							F53155104	02/05/2026				C53	3	Cheese - Grated White Buttercup																																		PL2
+
+Beverage Way Bistro							F53154283	02/05/2026				RCL	1	Chips - Raw Chunky																																		CA13
+Beverage Way Bistro							F53154283	02/05/2026				E	3	Eggs																																		CA13
+Beverage Way Bistro							F53154283	02/05/2026				MB6	2	Mushrooms - Button (Medium)																																		CA13
+Beverage Way Bistro							F53154283	02/05/2026				J4	8	Potatoes - Jacket 40's																																		CA13
+Beverage Way Bistro							F53154283	02/05/2026				Key	1	Key																																		CA13
+
+Taste of China							F52961807	02/05/2026				RCL	17	Chips - Raw Chunky																																		TC2
+
+Shildon Chop Suey House							F53165669	02/05/2026				RCL	8	Chips - Raw Chunky																																		SH1
+Shildon Chop Suey House							F53165669	02/05/2026				Key	1	Key																																		SH1
+
+The Bay Horse Heighington							F53162162	02/05/2026				RCL	3	Chips - Raw Chunky																																		BA3
+The Bay Horse Heighington							F53162162	02/05/2026				BUP	1	Butter - Portions																																		BA3
+The Bay Horse Heighington							F53162162	02/05/2026				C16	3	Cheese - Red Grated																																		BA3
+The Bay Horse Heighington							F53162162	02/05/2026				CB1	1	Cling Film																																		BA3
+The Bay Horse Heighington							F53162162	02/05/2026				WWV	1	Cooking Wine - White																																		BA3
+The Bay Horse Heighington							F53162162	02/05/2026				OL3	1	Olives - Black Pitted																																		BA3
+The Bay Horse Heighington							F53162162	02/05/2026				OL	1	Olives - Green Pitted																																		BA3
+
+Pizza Cottage & Cuccina							F52888134	02/05/2026				Key	1	Key																																		PI9
+Pizza Cottage & Cuccina							F52888134	02/05/2026				RCL	10	Chips - Raw Chunky																																		PI9
+Pizza Cottage & Cuccina							F52888134	02/05/2026				CWB	1	Cabbage - White																																		PI9
+
+KASPAS Bishop Auckland							F53163793	02/05/2026				M2	10	Milk - Whole Blue Top																																		KA2
+KASPAS Bishop Auckland							F53163793	02/05/2026				B	20	Bananas																																		KA2
+KASPAS Bishop Auckland							F53163793	02/05/2026				HM	1	Herb - Mint																																		KA2
+
+The 68 Cafe							F53157459	02/05/2026				T4	1	Baked Beans																																		CA2
+The 68 Cafe							F53157459	02/05/2026				BEC	2	Beetroot (Cooked)																																		CA2
+The 68 Cafe							F53157459	02/05/2026				BRK	2	Broccoli																																		CA2
+The 68 Cafe							F53157459	02/05/2026				CW	5	Cabbage - White																																		CA2
+The 68 Cafe							F53157459	02/05/2026				CAK	2	Carrots																																		CA2
+The 68 Cafe							F53157459	02/05/2026				CB5	1	Carrots - Batons																																		CA2
+The 68 Cafe							F53157459	02/05/2026				CB2	1	Carrots - Batons																																		CA2
+The 68 Cafe							F53157459	02/05/2026				WCD4	2	Cream - Double																																		CA2
+The 68 Cafe							F53157459	02/05/2026				CR	2	Cress																																		CA2
+The 68 Cafe							F53157459	02/05/2026				CU	4	Cucumber																																		CA2
+The 68 Cafe							F53157459	02/05/2026				LE	4	Lemons																																		CA2
+The 68 Cafe							F53157459	02/05/2026				LI	4	Lettuce - Iceberg																																		CA2
+The 68 Cafe							F53157459	02/05/2026				MSS2	10	Milk - Semi Skimmed (Green Top)																																		CA2
+The 68 Cafe							F53157459	02/05/2026				M2	10	Milk - Whole Blue Top																																		CA2
+The 68 Cafe							F53157459	02/05/2026				MB6	3	Mushrooms - Button (Medium)																																		CA2
+The 68 Cafe							F53157459	02/05/2026				ONC	1	Onions - Chilli																																		CA2
+The 68 Cafe							F53157459	02/05/2026				ORK	1	Onions - Red																																		CA2
+The 68 Cafe							F53157459	02/05/2026				PAQ2	2	Parsnips - Quartered Prepared																																		CA2
+The 68 Cafe							F53157459	02/05/2026				PG	2	Peppers - Green																																		CA2
+The 68 Cafe							F53157459	02/05/2026				PR	2	Peppers - Red																																		CA2
+The 68 Cafe							F53157459	02/05/2026				PY	2	Peppers - Yellow																																		CA2
+The 68 Cafe							F53157459	02/05/2026				JBR	1	Potatoes - Baby Roast																																		CA2
+The 68 Cafe							F53157459	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		CA2
+The 68 Cafe							F53157459	02/05/2026				SMF2	1	Soup Mix - Fine Cut																																		CA2
+The 68 Cafe							F53157459	02/05/2026				TCP	3	Tomatoes - Cherry																																		CA2
+The 68 Cafe							F53157459	02/05/2026				TB	2	Tomatoes																																		CA2
+The 68 Cafe							F53157459	02/05/2026				T75	1	Blue Centrefeed Rolls 2ply 170mmx150mtr																																		CA2
+The 68 Cafe							F53157459	02/05/2026				B	4	Bananas																																		CA2
+The 68 Cafe							F53157459	02/05/2026				LW	1	Salad - Bryans Leafy Salad																																		CA2
+
+Rof59 Activity Centre							F53157649	02/05/2026				POR	10	Chips - Chunky (Vacuum Pack)																																		RO3
+Rof59 Activity Centre							F53157649	02/05/2026				CAK	1	Carrots																																		RO3
+Rof59 Activity Centre							F53157649	02/05/2026				GMO	2	Cheese - Mozzarella Grated																																		RO3
+
+The Quarry Burn							F53155966	02/05/2026				RCL	4	Chips - Raw Chunky																																		QU1
+The Quarry Burn							F53155966	02/05/2026				CM2	2	Coleslaw - Mix																																		QU1
+The Quarry Burn							F53155966	02/05/2026				WCD4	2	Cream - Double																																		QU1
+
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				B	4	Bananas																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				CM2	4	Coleslaw - Mix																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				CU	10	Cucumber																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				E	4	Eggs																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				GBK	2	Grapes - Black																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				GGK	2	Grapes - Green																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				LE	2	Lemons																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				MB6	8	Mushrooms - Button (Medium)																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				PG	4	Peppers - Green																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				PY	4	Peppers - Yellow																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				TEN	10	Salad - Tender Leaves																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				ONC	2	Onions - Chilli																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				TBBS	8	Tomatoes - Beef																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				TC	3	Tomatoes - Cherry (Tray)																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				C37	1	Cheese - Cream																																		SA9
+Sam Turners Cafe Piercebridge							F53147049	02/05/2026				POR	14	Chips - Chunky (Vacuum Pack)																																		SA9
+
+Papa Kel's							F53153994	02/05/2026				RCL	3	Chips - Raw Chunky																																		PA4
+
+China Chef - Shildon							F53161415	02/05/2026				RCL	8	Chips - Raw Chunky																																		CH6
+China Chef - Shildon							F53161415	02/05/2026				Key	1	Key																																		CH6
+
+The Dairy Barn (Zaksons Limited)							F53162218	02/05/2026				CU	6	Cucumber																																		DA3
+The Dairy Barn (Zaksons Limited)							F53162218	02/05/2026				RCL	4	Chips - Raw Chunky																																		DA3
+The Dairy Barn (Zaksons Limited)							F53162218	02/05/2026				PEC	4	Pea Shoots																																		DA3
+The Dairy Barn (Zaksons Limited)							F53162218	02/05/2026				MU	2	Mushrooms - Open White Flats																																		DA3
+The Dairy Barn (Zaksons Limited)							F53162218	02/05/2026				LW	1	Salad - Bryans Leafy Salad																																		DA3
+The Dairy Barn (Zaksons Limited)							F53162218	02/05/2026				B	6	Bananas																																		DA3
+The Dairy Barn (Zaksons Limited)							F53162218	02/05/2026				C16	2	Cheese - Red Grated																																		DA3
+
+White Hart - WH							F53168153	02/05/2026				FEE	1	Service Fee																																		WH
+White Hart - WH							F53168153	02/05/2026				RCL	6	Chips - Raw Chunky																																		WH
+
+Shalimar Tandoori Ltd (Billingham)							F52887137	02/05/2026				RCT	4	Chips - Chunky Premium																																		SH3
+Shalimar Tandoori Ltd (Billingham)							F52887137	02/05/2026				Key	1	Key																																		SH3
+
+Castle Eden Inn							F53162736	02/05/2026				RCL	8	Chips - Raw Chunky																																		CA17
+Castle Eden Inn							F53162736	02/05/2026				SWM	2	Chips - Skin On Fries																																		CA17
+Castle Eden Inn							F53162736	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		CA17
+Castle Eden Inn							F53162736	02/05/2026				CS2	1	Carrots - Sliced																																		CA17
+
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				CGS	5	Cabbage - Green (Shredded) **NOT Vac Pac**																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				CD2	3	Carrots - Diced																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				C17	4	Cheese - Soprano Red Grated																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				RCL	6	Chips - Raw Chunky																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				CB2	4	Carrots - Batons																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				WCD4	2	Cream - Double																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				M2	10	Milk - Whole Blue Top																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				ONC	4	Onions - Chilli																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				SD2	3	Swedes - Diced																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				TK	1	Tomatoes																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				TBBS	1	Tomatoes - Beef																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				TC	1	Tomatoes - Cherry (Tray)																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				CU	2	Cucumber																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				LW	3	Salad - Bryans Leafy Salad																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				LE	12	Lemons																																		BL4
+Blue Bells (Pub) Newton Bewley							F53163306	02/05/2026				PQ10	9	Potatoes - Cut (Roast)																																		BL4
+
+Chimes Cafe Peterlee							F52888297	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		CH20
+
+Half Moon Inn Easington							F53150209	02/05/2026				PPS	5	Potatoes - Selected Peeled (clear bags)																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				CB5	3	Carrots - Batons																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				BRB	1	Broccoli																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				CGS2	3	Cabbage - Green (Shredded) Vac Pac																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				RCL	6	Chips - Raw Chunky																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				CU	6	Cucumber																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				LIB	1	Lettuce - Iceberg																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				O	1	Oranges - Medium																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				PG	1	Peppers - Green																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				PR	1	Peppers - Red																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				PY	1	Peppers - Yellow																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				SD5	3	Swedes - Diced																																		HA3
+Half Moon Inn Easington							F53150209	02/05/2026				LE	3	Lemons																																		HA3
+
+King Johns Tavern Valiant pub company Ltd							F53149544	02/05/2026				RCL	6	Chips - Raw Chunky																																		KI3
+
+Amore Pizza Hartlepool							F52888321	02/05/2026				Key	1	Key																																		AM2
+Amore Pizza Hartlepool							F52888321	02/05/2026				RCL	18	Chips - Raw Chunky																																		AM2
+
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				B	8	Bananas																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				BRB	2	Broccoli																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				BRK	3	Broccoli																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				BTL	10	Broccoli - Tenderstem																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				CAB	1	Carrots																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				CFB	2	Cauliflower																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				CF	5	Cauliflower																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				GMO	2	Cheese - Mozzarella Grated																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				C16	2	Cheese - Red Grated																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				C17	2	Cheese - Soprano Red Grated																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				RCL	12	Chips - Raw Chunky																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				CLM1	2	Coleslaw - Mix with Red & White Cabbage																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				HRC	3	Herbs - Red Chard																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				LE	8	Lemons																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				LOL	4	Lettuce - Lollo Rosso																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				LR	4	Lettuce - Radicchio																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				LIM	8	Limes																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				M	1	Mangetout																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				MB6	2	Mushrooms - Button (Medium)																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				ORK	3	Onions - Red																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				PEC	4	Pea Shoots																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				PG	6	Peppers - Green																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				PR	6	Peppers - Red																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				PY	6	Peppers - Yellow																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				JBRP	2	Potatoes - Baby Roast																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				HR1	3	Rocket Herbs																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				TB	1	Tomatoes																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				JB4	1	Potatoes - Jacket 40's																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				MA10	1	Mayonnaise - Real																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				COK	1	Courgette																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				AU	4	Aubergines																																		MA
+The Marine Hotel Seaton Carew							F53158845	02/05/2026				SO	2	Spring Onions																																		MA
+
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				BRK	1	Broccoli																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				CR2	1	Cabbage - Red Shredded																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				CB2	1	Carrots - Batons																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				C17B	1	Cheese - Soprano Red Grated																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				GMO	1	Cheese - Mozzarella Grated																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				CR	2	Cress																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				HC	1	Herb - Chives																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				HC2	1	Herb - Coriander																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				HR	1	Herb - Rosemary																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				HTI	1	Herb - Thyme																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				LL	1	Lettuce - Lambs																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				LE	8	Lemons																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				LIM	3	Limes																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				M2	6	Milk - Whole Blue Top																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				ONCB	1	Onions - Chilli																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				SUB	1	Peas - Sugar Snap																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				SUT	5	Peas - Sugar Snap																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				MP	1	Peppers - Mixed																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				P10	2	Potatoes - Peeled Standard (blue bag)																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				LW	1	Salad - Bryans Leafy Salad																																		TH2
+Three Horseshoes Cowpen Bewley							F53159683	02/05/2026				TK	2	Tomatoes																																		TH2
+
+The Pizza Guys Hartlepool							F53166169	02/05/2026				RCL	15	Chips - Raw Chunky																																		PI
+The Pizza Guys Hartlepool							F53166169	02/05/2026				RCL	8	Chips - Raw Chunky																																		PI
+The Pizza Guys Hartlepool							F53166169	02/05/2026				MBS	1	Mushrooms - Button (Small)																																		PI
+The Pizza Guys Hartlepool							F53166169	02/05/2026				Key	1	Key																																		PI
+
+Half Moon Inn Easington							F53160551	02/05/2026				PJB	1	Potatoes - Washed																																		HA3
+
+Blue Valentine's							F53128679	02/05/2026				S5	1	Strawberries																																		BL11
+Blue Valentine's							F53128679	02/05/2026				RASP	1	Raspberries																																		BL11
+Blue Valentine's							F53128679	02/05/2026				O	5	Oranges - Medium																																		BL11
+Blue Valentine's							F53128679	02/05/2026				HM	2	Herb - Mint																																		BL11
+Blue Valentine's							F53128679	02/05/2026				LIM	15	Limes																																		BL11
+Blue Valentine's							F53128679	02/05/2026				LE	10	Lemons																																		BL11
+Blue Valentine's							F53128679	02/05/2026				PI	1	Pineapples																																		BL11
+Blue Valentine's							F53128679	02/05/2026				CHIGK	1	Chillies - Green																																		BL11
+Blue Valentine's							F53128679	02/05/2026				CHIRK	1	Chillies - Red																																		BL11
+Blue Valentine's							F53128679	02/05/2026				C17	2	Cheese - Soprano Red Grated																																		BL11
+Blue Valentine's							F53128679	02/05/2026				WCD4	2	Cream - Double																																		BL11
+Blue Valentine's							F53128679	02/05/2026				LC1	4	Lettuce - Cos																																		BL11
+Blue Valentine's							F53128679	02/05/2026				M2	8	Milk - Whole Blue Top																																		BL11
+Blue Valentine's							F53128679	02/05/2026				PEC	1	Pea Shoots																																		BL11
+Blue Valentine's							F53128679	02/05/2026				BUP	1	Butter - Portions																																		BL11
+Blue Valentine's							F53128679	02/05/2026				CAK	2	Carrots																																		BL11
+Blue Valentine's							F53128679	02/05/2026				CF	1	Cauliflower																																		BL11
+Blue Valentine's							F53128679	02/05/2026				C	2	Celery																																		BL11
+Blue Valentine's							F53128679	02/05/2026				CU	4	Cucumber																																		BL11
+Blue Valentine's							F53128679	02/05/2026				E	1	Eggs																																		BL11
+Blue Valentine's							F53128679	02/05/2026				FIB	4	Figs																																		BL11
+Blue Valentine's							F53128679	02/05/2026				GBK	2	Grapes - Black																																		BL11
+Blue Valentine's							F53128679	02/05/2026				GGK	2	Grapes - Green																																		BL11
+Blue Valentine's							F53128679	02/05/2026				HJ	2	Honey																																		BL11
+Blue Valentine's							F53128679	02/05/2026				LL	2	Lettuce - Lambs																																		BL11
+Blue Valentine's							F53128679	02/05/2026				PR	2	Peppers - Red																																		BL11
+Blue Valentine's							F53128679	02/05/2026				PY	2	Peppers - Yellow																																		BL11
+Blue Valentine's							F53128679	02/05/2026				TCP	5	Tomatoes - Cherry																																		BL11
+Blue Valentine's							F53128679	02/05/2026				LB	4	Lettuce - Baby Gem																																		BL11
+Blue Valentine's							F53128679	02/05/2026				Key	1	Key																																		BL11
+
+The Lion							F53163444	02/05/2026				GMO	2	Cheese - Mozzarella Grated																																		LI7
+The Lion							F53163444	02/05/2026				C17	4	Cheese - Soprano Red Grated																																		LI7
+The Lion							F53163444	02/05/2026				LE	2	Lemons																																		LI7
+The Lion							F53163444	02/05/2026				LIM	2	Limes																																		LI7
+The Lion							F53163444	02/05/2026				ONC	3	Onions - Chilli																																		LI7
+The Lion							F53163444	02/05/2026				ORK	1	Onions - Red																																		LI7
+The Lion							F53163444	02/05/2026				PAK	1	Parsley - Curly																																		LI7
+The Lion							F53163444	02/05/2026				PR	5	Peppers - Red																																		LI7
+The Lion							F53163444	02/05/2026				PY	5	Peppers - Yellow																																		LI7
+The Lion							F53163444	02/05/2026				PJ	3	Potatoes - Jumbo																																		LI7
+The Lion							F53163444	02/05/2026				LW	4	Salad - Bryans Leafy Salad																																		LI7
+The Lion							F53163444	02/05/2026				TK	1	Tomatoes																																		LI7
+
+The Jacksons Wharf							F53163303	02/05/2026				RCL	2	Chips - Raw Chunky																																		JA1
+
+The Jacksons Wharf							F53163201	02/05/2026				CAK	2	Carrots																																		JA1
+The Jacksons Wharf							F53163201	02/05/2026				BP2	1	Broccoli Florets																																		JA1
+The Jacksons Wharf							F53163201	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		JA1
+The Jacksons Wharf							F53163201	02/05/2026				SD5	1	Swedes - Diced																																		JA1
+
+DSRM Sports & Social Club							F53014252	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		DS
+
+Paddock Farm Nursery & Water Gardens							F53158500	02/05/2026				CS2	1	Carrots - Sliced																																		PL
+Paddock Farm Nursery & Water Gardens							F53158500	02/05/2026				BRK	2.26	Broccoli																																		PL
+Paddock Farm Nursery & Water Gardens							F53158500	02/05/2026				LW	3	Salad - Bryans Leafy Salad																																		PL
+Paddock Farm Nursery & Water Gardens							F53158500	02/05/2026				TK	2	Tomatoes																																		PL
+Paddock Farm Nursery & Water Gardens							F53158500	02/05/2026				CU	1	Cucumber																																		PL
+Paddock Farm Nursery & Water Gardens							F53158500	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		PL
+Paddock Farm Nursery & Water Gardens							F53158500	02/05/2026				RCL	6	Chips - Raw Chunky																																		PL
+Paddock Farm Nursery & Water Gardens							F53158500	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		PL
+
+Thorpe Farm Centre							F53158589	02/05/2026				RCL	2	Chips - Raw Chunky																																		TH4
+Thorpe Farm Centre							F53158589	02/05/2026				MU	7	Mushrooms - Open White Flats																																		TH4
+
+Tre Amici Darlington							F53162497	02/05/2026				POR	10	Chips - Chunky (Vacuum Pack)																																		TR8
+Tre Amici Darlington							F53162497	02/05/2026				PEC	4	Pea Shoots																																		TR8
+Tre Amici Darlington							F53162497	02/05/2026				HR5	1	Rocket Herbs																																		TR8
+Tre Amici Darlington							F53162497	02/05/2026				SP	3	Spinach																																		TR8
+
+Neasham Road Cafe							F53157291	02/05/2026				RCL	3	Chips - Raw Chunky																																		NE1
+Neasham Road Cafe							F53157291	02/05/2026				MBS	1	Mushrooms - Button (Small)																																		NE1
+Neasham Road Cafe							F53157291	02/05/2026				Key	1	Key																																		NE1
+
+The Beeswing Inn							F53163080	02/05/2026				GMO	2	Cheese - Mozzarella Grated																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				RCT	2	Chips - Chunky Premium																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				CM2	1	Coleslaw - Mix																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				LE	5	Lemons																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				LB	2	Lettuce - Baby Gem																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				LIM	2	Limes																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				M	1	Mangetout																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				M2	3	Milk - Whole Blue Top																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				ONC	2	Onions - Chilli																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				ORK	2	Onions - Red																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				PG	2	Peppers - Green																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				PR	2	Peppers - Red																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				PY	2	Peppers - Yellow																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				LW	4	Salad - Bryans Leafy Salad																																		BE3
+The Beeswing Inn							F53163080	02/05/2026				SO	3	Spring Onions																																		BE3
+
+Town Hall Hotel Richmond							F53157549	02/05/2026				CAB	2	Carrots																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				RCL	6	Chips - Raw Chunky																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				CU	3	Cucumber																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				LE	4	Lemons																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				LB	4	Lettuce - Baby Gem																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				LIB	1	Lettuce - Iceberg																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				LIM	2	Limes																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				HR2	1	Micro Herb - Red Amaranth																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				PEC	1	Pea Shoots																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				PR	3	Peppers - Red																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				TBBS	5	Tomatoes - Beef																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				TCP	6	Tomatoes - Cherry																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				LI	2	Lettuce - Iceberg																																		TO
+Town Hall Hotel Richmond							F53157549	02/05/2026				PAQ2	4	Parsnips - Quartered Prepared																																		TO
+
+Terry's Catering							F53168086	02/05/2026				FEE	1	Service Fee																																		TE6
+Terry's Catering							F53168086	02/05/2026				RC14	1	Chips - Raw Fish Shop																																		TE6
+
+Blacksmiths Arms Swainby							F53168061	02/05/2026				FEE	1	Service Fee																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				RCL	14	Chips - Raw Chunky																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				TEN	12	Salad - Tender Leaves																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				MB6	2	Mushrooms - Button (Medium)																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				BRB	1	Broccoli																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				HB	1	Herb - Basil																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				HC2	2	Herb - Coriander																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				CG5	1	Carrots Grated																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				OSR2	2	Onions - Red Sliced																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				TB	2	Tomatoes																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				ORB	1	Onions - Red																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				CU1	1	Cucumber																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				B	6	Bananas																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				LE	12	Lemons																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				LIM	6	Limes																																		BL10
+Blacksmiths Arms Swainby							F53168061	02/05/2026				PEC	3	Pea Shoots																																		BL10
+
+The Copper Beech Pub Darlington							F53161623	02/05/2026				RCL	10	Chips - Raw Chunky																																		CO6
+
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				AR	10	Apples - Red																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				B	6	Bananas																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				CW	6	Cabbage - White																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				CAK	4	Carrots																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				RCL	6	Chips - Raw Chunky																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				CU	8	Cucumber																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				LE	4	Lemons																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				MB6	6	Mushrooms - Button (Medium)																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				ORK	3	Onions - Red																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				MP	1	Peppers - Mixed																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				JB4	1	Potatoes - Jacket 40's																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				LW	12	Salad - Bryans Leafy Salad																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				TBBS	10	Tomatoes - Beef																																		SA10
+Sam Turners Cafe Northallerton							F53157446	02/05/2026				TC	2	Tomatoes - Cherry (Tray)																																		SA10
+
+The Brownlow Arms Richmond							F53130069	02/05/2026				MSS2	6	Milk - Semi Skimmed (Green Top)																																		BR8
+The Brownlow Arms Richmond							F53130069	02/05/2026				WCD4	6	Cream - Double																																		BR8
+The Brownlow Arms Richmond							F53130069	02/05/2026				P10	6	Potatoes - Peeled Standard (blue bag)																																		BR8
+The Brownlow Arms Richmond							F53130069	02/05/2026				RCL	4	Chips - Raw Chunky																																		BR8
+
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				P10	5	Potatoes - Peeled Standard (blue bag)																																		LI4
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				CW	2	Cabbage - White																																		LI4
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				CR	1	Cress																																		LI4
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				MB6	3	Mushrooms - Button (Medium)																																		LI4
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				PEC	4	Pea Shoots																																		LI4
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				LW	5	Salad - Bryans Leafy Salad																																		LI4
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				TEN	3	Salad - Tender Leaves																																		LI4
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				CU	12	Cucumber																																		LI4
+Little Drummer Boy Tearoom Ltd							F53161098	02/05/2026				MISC	1	Miscellaneous																																		LI4
+
+The Savoury Cafe Darlington							F53155899	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		SA2
+
+La Cocina Richmond Limited							F53163420	02/05/2026				HC	1	Herb - Chives																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				HM	1	Herb - Mint																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				S5	2	Strawberries																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				RASP	2	Raspberries																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				LE	15	Lemons																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				CU	3	Cucumber																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				TCP	2	Tomatoes - Cherry																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				POL	1	Peppers - Padron																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				SP	2	Spinach																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				HR1	4	Rocket Herbs																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				AU	2	Aubergines																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		LC1
+La Cocina Richmond Limited							F53163420	02/05/2026				AU	2	Aubergines																																		LC1
+
+Market fish n chips							F53165457	02/05/2026				RC14	7	Chips - Raw Fish Shop																																		MA4
+
+Hustle							F53150537	02/05/2026				CB2	1	Carrots - Batons																																		FO4
+Hustle							F53150537	02/05/2026				P10	1	Potatoes - Peeled Standard (blue bag)																																		FO4
+
+Black Horse Inn							F53161643	02/05/2026				WCD4	3	Cream - Double																																		BL7
+Black Horse Inn							F53161643	02/05/2026				LB	4	Lettuce - Baby Gem																																		BL7
+Black Horse Inn							F53161643	02/05/2026				CU	6	Cucumber																																		BL7
+Black Horse Inn							F53161643	02/05/2026				PPS	2	Potatoes - Selected Peeled (clear bags)																																		BL7
+
+Duke of Wellington							F53165293	02/05/2026				POR	4	Chips - Chunky (Vacuum Pack)																																		DU3
+Duke of Wellington							F53165293	02/05/2026				LEB	1	Leeks																																		DU3
+Duke of Wellington							F53165293	02/05/2026				SD2	2	Swedes - Diced																																		DU3
+Duke of Wellington							F53165293	02/05/2026				CGS2	2	Cabbage - Green (Shredded) Vac Pac																																		DU3
+Duke of Wellington							F53165293	02/05/2026				BP2	1	Broccoli Florets																																		DU3
+Duke of Wellington							F53165293	02/05/2026				BUT1	8	Butter - Salted																																		DU3
+Duke of Wellington							F53165293	02/05/2026				PC1	2	Potatoes - Clean Cut																																		DU3
+Duke of Wellington							F53165293	02/05/2026				CFB	1	Cauliflower																																		DU3
+Duke of Wellington							F53165293	02/05/2026				PAQ2	2	Parsnips - Quartered Prepared																																		DU3
+Duke of Wellington							F53165293	02/05/2026				CAB	1	Carrots																																		DU3
+Duke of Wellington							F53165293	02/05/2026				MSS2	3	Milk - Semi Skimmed (Green Top)																																		DU3
+Duke of Wellington							F53165293	02/05/2026				C53	1	Cheese - Grated White Buttercup																																		DU3
+Duke of Wellington							F53165293	02/05/2026				C16	1	Cheese - Red Grated																																		DU3
+Duke of Wellington							F53165293	02/05/2026				PAK	1	Parsley - Curly																																		DU3
+Duke of Wellington							F53165293	02/05/2026				PAKFL	1	Parsley - Flat Leaf Loose																																		DU3
+
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				FEE	1	Service Fee																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				SP	3	Spinach																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				HR5	1	Rocket Herbs																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				S5	2	Strawberries																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				BERBL	2	Blueberries																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				MW	1	Watermelon																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				CHIRK	0.25	Chillies - Red																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				CHIGK	0.25	Chillies - Green																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				SO	4	Spring Onions																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				ADV	6	Avocados																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				PRP	1	Potato Red Skin																																		WA4
+The Warehouse Kitchen & Bar							F53168129	02/05/2026				ORB	1	Onions - Red																																		WA4
+
+Belle Vue Fisheries							F52888406	02/05/2026				RCL	4	Chips - Raw Chunky																																		BE1
+
+Fatso's							F53143791	02/05/2026				CG5	10	Carrots Grated																																		FA9
+Fatso's							F53143791	02/05/2026				OI	3	Oil - Pure Vegetable																																		FA9
+
+The Elm Tree							F52888365	02/05/2026				P10	2	Potatoes - Peeled Standard (blue bag)																																		EM
+The Elm Tree							F52888365	02/05/2026				CGS2	1	Cabbage - Green (Shredded) Vac Pac																																		EM
+The Elm Tree							F52888365	02/05/2026				SD2	1	Swedes - Diced																																		EM
+The Elm Tree							F52888365	02/05/2026				CB2	1	Carrots - Batons																																		EM
+The Elm Tree							F52888365	02/05/2026				SD5	1	Swedes - Diced																																		EM
+The Elm Tree							F52888365	02/05/2026				CB5	1	Carrots - Batons																																		EM
+
+Hammer & Pincers							F53163786	02/05/2026				RCL	2	Chips - Raw Chunky																																		BL1
+Hammer & Pincers							F53163786	02/05/2026				JBRP	1	Potatoes - Baby Roast																																		BL1
+Hammer & Pincers							F53163786	02/05/2026				PQ10	2	Potatoes - Cut (Roast)																																		BL1
+Hammer & Pincers							F53163786	02/05/2026				GMO	1	Cheese - Mozzarella Grated																																		BL1
+Hammer & Pincers							F53163786	02/05/2026				C16	2	Cheese - Red Grated																																		BL1
+
+Dun Cow Inn							F53162579	02/05/2026				AU	2	Aubergines																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				CFB	1	Cauliflower																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				C	2	Celery																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				C53	2	Cheese - Grated White Buttercup																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				C16	2	Cheese - Red Grated																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				RCL	10	Chips - Raw Chunky																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				COK	1	Courgette																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				WC4	3	Cream - Whipping																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				CU1	1	Cucumber																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				GAB	1	Garlic - Peeled																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				LR	10	Lettuce - Radicchio																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				LOL	1	Lettuce - Lollo Rosso																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				MSS2	6	Milk - Semi Skimmed (Green Top)																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				MB6	2	Mushrooms - Button (Medium)																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				PEC	2	Pea Shoots																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				PG	2	Peppers - Green																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				PR	2	Peppers - Red																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				PY	2	Peppers - Yellow																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				PLUK	1	Plums																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				PPS	2	Potatoes - Selected Peeled (clear bags)																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				HR1	1	Rocket Herbs																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				TB	1	Tomatoes																																		DU2
+Dun Cow Inn							F53162579	02/05/2026				WCP	1	Watercress																																		DU2
+
+O'Connells Middlesbrough							F53146606	02/05/2026				PQ10	8	Potatoes - Cut (Roast)																																		OC
+O'Connells Middlesbrough							F53146606	02/05/2026				RCL	1	Chips - Raw Chunky																																		OC
+
+The Smith's Arms Carlton							F52888352	02/05/2026				PAQ2	2	Parsnips - Quartered Prepared																																		SM1
+The Smith's Arms Carlton							F52888352	02/05/2026				BP2	1	Broccoli Florets																																		SM1
+The Smith's Arms Carlton							F52888352	02/05/2026				CF2	1	Cauliflower - Prepared																																		SM1
+The Smith's Arms Carlton							F52888352	02/05/2026				SUB	1	Peas - Sugar Snap																																		SM1
+
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				SWM	4	Chips - Skin On Fries																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				GAB	1	Garlic - Peeled																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				SD5	1	Swedes - Diced																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				BFB	1	Beans - Fine																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				C	2	Celery																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				CU	3	Cucumber																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				MB6	2	Mushrooms - Button (Medium)																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				PARK	3	Parsnip																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				MP	1	Peppers - Mixed																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				PRP	2	Potato Red Skin																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				TB	1	Tomatoes																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				TBBS	5	Tomatoes - Beef																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				LE	10	Lemons																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				GMO	3	Cheese - Mozzarella Grated																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				C17	5	Cheese - Soprano Red Grated																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				WCD4	1	Cream - Double																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				EB	1	Eggs																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				MSS2	5	Milk - Semi Skimmed (Green Top)																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				M2	5	Milk - Whole Blue Top																																		SC4
+The Scruffy Duck Valiant Pub Company Ltd							F53163230	02/05/2026				YT1	1	Yoghurt - Natural																																		SC4
+
+The Senators Stockton							F52888369	02/05/2026				PQ10	2	Potatoes - Cut (Roast)																																		SE
+The Senators Stockton							F52888369	02/05/2026				CB5	1	Carrots - Batons																																		SE
+The Senators Stockton							F52888369	02/05/2026				CGS2	1	Cabbage - Green (Shredded) Vac Pac																																		SE
+The Senators Stockton							F52888369	02/05/2026				E	1	Eggs																																		SE
+
+Chipchase Chippy Middlesbrough							F52886178	02/05/2026				RC14	3	Chips - Raw Fish Shop																																		CH14
+Chipchase Chippy Middlesbrough							F52886178	02/05/2026				Key	1	Key																																		CH14
+
+The Smith's Arms Carlton							F53164048	02/05/2026				POR	4	Chips - Chunky (Vacuum Pack)																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				SWM	1	Chips - Skin On Fries																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				TK	1	Tomatoes																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				TCP	3	Tomatoes - Cherry																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				MSS2	4	Milk - Semi Skimmed (Green Top)																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				SP	1	Spinach																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				HR1	1	Rocket Herbs																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				LB	2	Lettuce - Baby Gem																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				BUT	4	Butter - Unsalted																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				C48	2	Cheese - Halloumi																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				Cl	1	Cheese - Brie																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				PG	1	Peppers - Green																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				PR	1	Peppers - Red																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				PY	1	Peppers - Yellow																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				ONC	2	Onions - Chilli																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				GMO	2	Cheese - Mozzarella Grated																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				C17	2	Cheese - Soprano Red Grated																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				CU	2	Cucumber																																		SM1
+The Smith's Arms Carlton							F53164048	02/05/2026				BTL	2	Broccoli - Tenderstem																																		SM1
+
+The Mitre Stockton							F53161803	02/05/2026				BRB	1	Broccoli																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				BRK	2	Broccoli																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				C16	3	Cheese - Red Grated																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				RCL	11	Chips - Raw Chunky																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				CM2	1	Coleslaw - Mix																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				T72	1	Cornflour																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				LE	3	Lemons																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				LIM	2	Limes																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				MSS2	6	Milk - Semi Skimmed (Green Top)																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				ONC	4	Onions - Chilli																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				T11S	2	Peas - Mushy																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				PQ10	1	Potatoes - Cut (Roast)																																		MI2
+The Mitre Stockton							F53161803	02/05/2026				TK	3	Tomatoes																																		MI2
+
+Fatso's							F53150464	02/05/2026				GWB	4	Puree - Garlic																																		FA9
+
+Hamilton Russell							F53163898	02/05/2026				FL2	1	Flour - Plain																																		HA11
+Hamilton Russell							F53163898	02/05/2026				ADV	10	Avocados																																		HA11
+Hamilton Russell							F53163898	02/05/2026				CW	1	Cabbage - White																																		HA11
+Hamilton Russell							F53163898	02/05/2026				CAB	1	Carrots																																		HA11
+Hamilton Russell							F53163898	02/05/2026				C	2	Celery																																		HA11
+Hamilton Russell							F53163898	02/05/2026				RCL	14	Chips - Raw Chunky																																		HA11
+Hamilton Russell							F53163898	02/05/2026				CU	10	Cucumber																																		HA11
+Hamilton Russell							F53163898	02/05/2026				E	3	Eggs																																		HA11
+Hamilton Russell							F53163898	02/05/2026				HM	1	Herb - Mint																																		HA11
+Hamilton Russell							F53163898	02/05/2026				HTI	1	Herb - Thyme																																		HA11
+Hamilton Russell							F53163898	02/05/2026				LEE	1	Leeks																																		HA11
+Hamilton Russell							F53163898	02/05/2026				LE	10	Lemons																																		HA11
+Hamilton Russell							F53163898	02/05/2026				LIB	1	Lettuce - Iceberg																																		HA11
+Hamilton Russell							F53163898	02/05/2026				LIM	10	Limes																																		HA11
+Hamilton Russell							F53163898	02/05/2026				MA10	1	Mayonnaise - Real																																		HA11
+Hamilton Russell							F53163898	02/05/2026				M2	18	Milk - Whole Blue Top																																		HA11
+Hamilton Russell							F53163898	02/05/2026				MU	1	Mushrooms - Open White Flats																																		HA11
+Hamilton Russell							F53163898	02/05/2026				ONCB	1	Onions - Chilli																																		HA11
+Hamilton Russell							F53163898	02/05/2026				ORK	1	Onions - Red																																		HA11
+Hamilton Russell							F53163898	02/05/2026				O	5	Oranges - Medium																																		HA11
+Hamilton Russell							F53163898	02/05/2026				PPS	2	Potatoes - Selected Peeled (clear bags)																																		HA11
+Hamilton Russell							F53163898	02/05/2026				SO	4	Spring Onions																																		HA11
+
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				LS2	1	Leeks - Sliced																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				PAQ2	1	Parsnips - Quartered Prepared																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				BOB	5	Beans - Fine																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				BSP	1	Bean Sprouts																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				BTL	5	Broccoli - Tenderstem																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				CBD	3	Carrots - Chantenay																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				MA20	5	Mangetout																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				ONC	4	Onions - Chilli																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				ORK	4	Onions - Red																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				SHAN	1	Pak Choi - Shanghai Green																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				SUT	5	Peas - Sugar Snap																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				MP	1	Peppers - Mixed																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				B	1	Bananas																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				LE	8	Lemons																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				RASP	1	Raspberries																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				WC4	2	Cream - Whipping																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53159947	02/05/2026				MSS2	6	Milk - Semi Skimmed (Green Top)																																		RI2
+
+The Fish and Chip Co							F53162597	02/05/2026				RC14	8	Chips - Raw Fish Shop																																		FI2
+
+Merlin Billingham							F52888387	02/05/2026				RCL	25	Chips - Raw Chunky																																		ME
+
+Purple Pepper Takeaway Stockton							F52886111	02/05/2026				Key	1	Key																																		RE12
+Purple Pepper Takeaway Stockton							F52886111	02/05/2026				RCL	12	Chips - Raw Chunky																																		RE12
+
+Byrd & Burgz							F53163876	02/05/2026				RCL	26	Chips - Raw Chunky																																		BY
+Byrd & Burgz							F53163876	02/05/2026				Key	1	Key																																		BY
+
+Amore Pizza Norton							F52888372	02/05/2026				Key	1	Key																																		AM
+Amore Pizza Norton							F52888372	02/05/2026				RCL	16	Chips - Raw Chunky																																		AM
+
+The Tipsy Cow							F53159613	02/05/2026				RCL	8	Chips - Raw Chunky																																		TI
+The Tipsy Cow							F53159613	02/05/2026				PQ10	5	Potatoes - Cut (Roast)																																		TI
+
+Cherry Hill Garden Centre							F53157907	02/05/2026				AR	6	Apples - Red																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				B	12	Bananas																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				CRF2	3	Cabbage - Red Fine Cut																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				CCH2	2	Carrot Chopped Fine																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				C	1	Celery																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				RCL	6	Chips - Raw Chunky																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				CU1	1	Cucumber																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				LIB	3	Lettuce - Iceberg																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				MB6	3	Mushrooms - Button (Medium)																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				ORB	1	Onions - Red																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				P	6	Pears																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				MP	2	Peppers - Mixed																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				SA	8	Satsumas																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				S5	3	Strawberries																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				TB	2	Tomatoes																																		CH
+Cherry Hill Garden Centre							F53157907	02/05/2026				TC	3	Tomatoes - Cherry (Tray)																																		CH
+
+The Wellington							F53162446	02/05/2026				MSS2	7	Milk - Semi Skimmed (Green Top)																																		WE3
+The Wellington							F53162446	02/05/2026				PFL	4	Frozen Peas																																		WE3
+The Wellington							F53162446	02/05/2026				RCL	5	Chips - Raw Chunky																																		WE3
+The Wellington							F53162446	02/05/2026				CLM1	2	Coleslaw - Mix with Red & White Cabbage																																		WE3
+The Wellington							F53162446	02/05/2026				C17	4	Cheese - Soprano Red Grated																																		WE3
+The Wellington							F53162446	02/05/2026				CUS	3	Custard																																		WE3
+The Wellington							F53162446	02/05/2026				TK	2	Tomatoes																																		WE3
+The Wellington							F53162446	02/05/2026				BTL	3	Broccoli - Tenderstem																																		WE3
+The Wellington							F53162446	02/05/2026				CU	4	Cucumber																																		WE3
+The Wellington							F53162446	02/05/2026				LW	5	Salad - Bryans Leafy Salad																																		WE3
+The Wellington							F53162446	02/05/2026				E	1	Eggs																																		WE3
+The Wellington							F53162446	02/05/2026				LFG	1	Floor Gel - Lemon																																		WE3
+The Wellington							F53162446	02/05/2026				LE	8	Lemons																																		WE3
+The Wellington							F53162446	02/05/2026				T7	1	Apples - Solid Pack																																		WE3
+
+Dragon Chinese							F53156824	02/05/2026				RCL	21	Chips - Raw Chunky																																		DR1
+
+The Pub & Kitchen Cassop							F53163710	02/05/2026				PJB	12	Potatoes - Washed																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				PQ10	12	Potatoes - Cut (Roast)																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				CS5	7	Carrots - Sliced																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				SD5	13	Swedes - Diced																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				PAQ2	13	Parsnips - Quartered Prepared																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				CGS	6	Cabbage - Green (Shredded) **NOT Vac Pac**																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				C17B	1	Cheese - Soprano Red Grated																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				GMOB	1	Cheese - Mozzarella Grated																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				EB	1	Eggs																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				E	2	Eggs																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				M2	12	Milk - Whole Blue Top																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				LS2	1	Leeks - Sliced																																		PU
+The Pub & Kitchen Cassop							F53163710	02/05/2026				MA10	1	Mayonnaise - Real																																		PU
+
+The Poachers Metal Bridge							F53162173	02/05/2026				BFB	2	Beans - Fine																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				BUR	2	Buttermilk																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				CB5	1	Carrots - Batons																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				GMO	5	Cheese - Mozzarella Grated																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				SWP	2	Chips - Skinny Fries																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				CLM1	2	Coleslaw - Mix with Red & White Cabbage																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				EB	2	Eggs																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				HB	1	Herb - Basil																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				LE	6	Lemons																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				MSS2	8	Milk - Semi Skimmed (Green Top)																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				MB6	1	Mushrooms - Button (Medium)																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				ONCB	1	Onions - Chilli																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				PAQ2	2	Parsnips - Quartered Prepared																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				MP	1	Peppers - Mixed																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				JBR	1	Potatoes - Baby Roast																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				PQ10	12	Potatoes - Cut (Roast)																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				JB4	1	Potatoes - Jacket 40's																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				HR5	2	Rocket Herbs																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				LW	6	Salad - Bryans Leafy Salad																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				SP	2	Spinach																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				SO	12	Spring Onions																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				TB	1	Tomatoes																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				TBB	1	Tomatoes - Beef																																		PO3
+The Poachers Metal Bridge							F53162173	02/05/2026				C17B	1	Cheese - Soprano Red Grated																																		PO3
+
+Golden House							F53166098	02/05/2026				RCL	12	Chips - Raw Chunky																																		GO1
+Golden House							F53166098	02/05/2026				Key	1	Key																																		GO1
+
+Blue Bells (Pub) Newton Bewley							F53171186	02/05/2026				CD2	1	Carrots - Diced																																		BL4
+Blue Bells (Pub) Newton Bewley							F53171186	02/05/2026				CD5	1	Carrots - Diced																																		BL4
+Blue Bells (Pub) Newton Bewley							F53171186	02/05/2026				SD5	2	Swedes - Diced																																		BL4
+Blue Bells (Pub) Newton Bewley							F53171186	02/05/2026				CB5	2	Carrots - Batons																																		BL4
+
+Teesside Golf Club (AC at Teesside Ltd)							F53171519	02/05/2026				PQ10	3	Potatoes - Cut (Roast)																																		RI2
+Teesside Golf Club (AC at Teesside Ltd)							F53171519	02/05/2026				RCL	3	Chips - Raw Chunky																																		RI2
+
+Lockey Fish & Chip Van							F53129530	02/05/2026				RC14	13	Chips - Raw Fish Shop																																		LO1
+
+Bison's Bar & Grill Norton							F52886117	02/05/2026				RCL	4	Chips - Raw Chunky																																		BI2
+Bison's Bar & Grill Norton							F52886117	02/05/2026				FEE	1	Service Fee																																		BI2
+Bison's Bar & Grill Norton							F52886117	02/05/2026				ONCB	1	Onions - Chilli																																		BI2
+Bison's Bar & Grill Norton							F52886117	02/05/2026				CHIRK	0.25	Chillies - Red																																		BI2
+Bison's Bar & Grill Norton							F52886117	02/05/2026				PEC	1	Pea Shoots																																		BI2
+Bison's Bar & Grill Norton							F52886117	02/05/2026				GAB	1	Garlic - Peeled																																		BI2
+Bison's Bar & Grill Norton							F52886117	02/05/2026				HR	1	Herb - Rosemary																																		BI2
+Bison's Bar & Grill Norton							F52886117	02/05/2026				HTI	1	Herb - Thyme																																		BI2
+
+CHAMPS SPORTS BAR							F53162353	02/05/2026				RCL	7	Chips - Raw Chunky																																		CH1
+
