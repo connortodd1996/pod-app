@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import base64
 
 st.set_page_config(page_title="POD System", layout="centered")
 
@@ -39,10 +40,10 @@ scope = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-creds_dict = st.secrets["gcp_service_account"]
-creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(
+    st.secrets["gcp_service_account"], scope
+)
 client = gspread.authorize(creds)
-
 sheet = client.open("POD_DATA").sheet1
 
 # -----------------------------
@@ -163,6 +164,9 @@ if st.session_state.auth["role"] == "manager":
         </div>
         """, unsafe_allow_html=True)
 
+        if row["image"]:
+            st.image(base64.b64decode(row["image"]))
+
     st.stop()
 
 # -----------------------------
@@ -234,11 +238,9 @@ if st.session_state.review:
 
             sheet.append_row(new_row)
 
-            st.success("Saved ✅")
-
             st.session_state.review = None
+            st.success("Saved ✅")
             st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
 else:
 
@@ -246,10 +248,18 @@ else:
 
         status = st.radio("Status", ["Delivered","Failed"])
         notes = st.text_area("Notes")
+        photo = st.file_uploader("Upload Photo", type=["jpg","png"])
+
+        if photo:
+            st.image(photo)
 
         submitted = st.form_submit_button("Submit")
 
         if submitted:
+
+            image_data = ""
+            if photo:
+                image_data = base64.b64encode(photo.read()).decode()
 
             st.session_state.review = {
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -259,7 +269,7 @@ else:
                 "order_id": order_id,
                 "status": status,
                 "notes": notes,
-                "image": ""
+                "image": image_data
             }
 
             st.rerun()
