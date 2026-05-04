@@ -3,59 +3,6 @@ import pandas as pd
 from datetime import datetime
 import os, csv
 import urllib.parse
-import base64
-
-# -----------------------------
-# LOAD LOGO
-# -----------------------------
-def get_base64_image(path):
-    with open(path, "rb") as f:
-        return base64.b64encode(f.read()).decode()
-
-logo_base64 = ""
-if os.path.exists("logo.png"):
-    logo_base64 = get_base64_image("logo.png")
-
-# -----------------------------
-# STYLE
-# -----------------------------
-st.set_page_config(page_title="POD System", layout="centered")
-
-st.markdown(f"""
-<style>
-.stApp {{
-    background-color: #f9fafb;
-    background-image: url("data:image/png;base64,{logo_base64}");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 300px;
-    background-attachment: fixed;
-}}
-
-.stApp::before {{
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.92);
-    z-index: -1;
-}}
-
-.card {{
-    padding: 15px;
-    border-radius: 12px;
-    background-color: white;
-    margin-bottom: 10px;
-}}
-
-.stButton>button {{
-    height: 60px;
-    width: 100%;
-    font-size: 18px;
-    border-radius: 12px;
-}}
-</style>
-""", unsafe_allow_html=True)
 
 # -----------------------------
 # LOGIN
@@ -102,32 +49,44 @@ if not st.session_state.auth["ok"]:
     st.stop()
 
 # -----------------------------
-# LOAD ROUTE MAP
-# -----------------------------
-route_map = pd.read_csv("route_map.csv")
-route_map.columns = route_map.columns.str.strip()
-
-# -----------------------------
-# MANAGER DATE SELECTOR
+# MANAGER: UPLOAD + DATE SELECT
 # -----------------------------
 if st.session_state.auth["role"] == "manager":
 
-    st.sidebar.header("📅 Select Date")
+    st.sidebar.header("📂 Daily File")
 
-    files = []
-    if os.path.exists("data"):
-        files = sorted(os.listdir("data"), reverse=True)
+    uploaded_file = st.sidebar.file_uploader("Upload today's file", type=["txt"])
 
-    selected_file = st.sidebar.selectbox("Choose a date", files)
+    if uploaded_file:
+        today = datetime.now().strftime("%Y-%m-%d")
 
-    if selected_file:
-        raw = pd.read_csv(f"data/{selected_file}", sep="\t")
+        os.makedirs("data", exist_ok=True)
+
+        # Save today's file
+        with open("current_day.txt", "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+        # Save historical copy
+        with open(f"data/{today}.txt", "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+        st.sidebar.success(f"Saved for {today}")
+
+    # Date selector
+    files = sorted(os.listdir("data"), reverse=True) if os.path.exists("data") else []
+    selected_file = st.sidebar.selectbox("📅 View date", ["Today"] + files)
+
+    if selected_file == "Today":
+        if os.path.exists("current_day.txt"):
+            raw = pd.read_csv("current_day.txt", sep="\t")
+        else:
+            st.warning("Upload today's file")
+            st.stop()
     else:
-        st.warning("No data files found")
-        st.stop()
+        raw = pd.read_csv(f"data/{selected_file}", sep="\t")
 
 else:
-    # DRIVER uses current day
+    # DRIVER always uses current day
     if os.path.exists("current_day.txt"):
         raw = pd.read_csv("current_day.txt", sep="\t")
     else:
@@ -135,9 +94,12 @@ else:
         st.stop()
 
 # -----------------------------
-# CLEAN DATA
+# LOAD ROUTE MAP
 # -----------------------------
+route_map = pd.read_csv("route_map.csv")
+
 raw.columns = raw.columns.str.strip()
+route_map.columns = route_map.columns.str.strip()
 
 clean = raw[["Co./Last Name", "Invoice No.", "Record ID"]].dropna().drop_duplicates()
 clean.columns = ["customer", "order_id", "zone"]
@@ -154,12 +116,14 @@ jobs["driver"] = jobs["driver"].fillna("Unassigned")
 jobs["route"] = jobs["route"].fillna("Unknown")
 
 # -----------------------------
-# COMPLETED (PODS)
+# COMPLETED
 # -----------------------------
 if os.path.exists("deliveries.csv"):
     completed = pd.read_csv("deliveries.csv")
 else:
     completed = pd.DataFrame()
+
+os.makedirs("photos", exist_ok=True)
 
 # -----------------------------
 # MANAGER VIEW
@@ -168,10 +132,10 @@ if st.session_state.auth["role"] == "manager":
 
     st.title("📊 Manager Dashboard")
 
-    st.subheader("📦 Deliveries for selected date")
+    st.subheader("📦 Deliveries")
     st.dataframe(jobs[["driver", "route", "customer", "order_id"]])
 
-    st.subheader("📸 Completed PODs")
+    st.subheader("📸 PODs")
 
     if not completed.empty:
         i = st.selectbox(
@@ -182,14 +146,7 @@ if st.session_state.auth["role"] == "manager":
 
         r = completed.loc[i]
 
-        st.markdown(f"""
-        <div class="card">
-        <b>{r['customer']}</b><br>
-        Driver: {r['driver']}<br>
-        Status: {r['status']}<br>
-        Notes: {r['notes']}
-        </div>
-        """, unsafe_allow_html=True)
+        st.write(r)
 
         if pd.notna(r.get("image")):
             path = f"photos/{r['image']}"
@@ -197,12 +154,12 @@ if st.session_state.auth["role"] == "manager":
                 st.image(path)
 
     else:
-        st.info("No completed deliveries yet")
+        st.info("No PODs yet")
 
     st.stop()
 
 # -----------------------------
-# DRIVER VIEW (UNCHANGED)
+# DRIVER VIEW
 # -----------------------------
 driver = st.session_state.auth["driver"]
 st.title(f"🚚 {driver}")
@@ -214,16 +171,12 @@ if driver_jobs.empty:
     st.stop()
 
 idx = st.selectbox(
-    "📦 Select Delivery",
+    "Select Delivery",
     driver_jobs.index,
     format_func=lambda i: driver_jobs.loc[i, "customer"]
 )
 
 row = driver_jobs.loc[idx]
 
-customer = row["customer"]
-order_id = row["order_id"]
-route = row["route"]
-
-st.write(customer)
-st.write(order_id)
+st.write(row["customer"])
+st.write(row["order_id"])
