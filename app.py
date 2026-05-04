@@ -76,7 +76,7 @@ if not st.session_state.auth["ok"]:
 
         if st.button("Login"):
             if p == MANAGER_PIN:
-                st.session_state.auth = {"ok": True, "role": "manager"}
+                st.session_state.auth = {"ok": True, "role": "manager", "driver": None}
                 st.rerun()
             else:
                 st.error("Wrong PIN")
@@ -182,9 +182,32 @@ else:
 jobs = jobs[~jobs["order_id"].astype(str).isin(done_ids)]
 
 # -----------------------------
+# MANAGER VIEW
+# -----------------------------
+if st.session_state.auth["role"] == "manager":
+
+    st.title(f"📊 Manager Dashboard ({selected_date})")
+
+    st.dataframe(jobs[["driver","route","customer","order_id"]])
+
+    if not completed.empty:
+        i = st.selectbox("View POD", completed.index)
+        r = completed.loc[i]
+
+        st.write(r)
+
+        if pd.notna(r.get("image")):
+            path = f"photos/{r['image']}"
+            if os.path.exists(path):
+                st.image(path)
+
+    st.stop()
+
+# -----------------------------
 # DRIVER VIEW
 # -----------------------------
 driver = st.session_state.auth["driver"]
+
 st.title(f"🚚 {driver}")
 
 driver_jobs = jobs[jobs["driver"] == driver]
@@ -193,7 +216,6 @@ if driver_jobs.empty:
     st.success("All deliveries complete")
     st.stop()
 
-# ALWAYS RESET DROPDOWN (fix)
 options = driver_jobs.index.tolist()
 
 idx = st.selectbox(
@@ -238,14 +260,11 @@ if st.session_state.review_data:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown('<div class="red">', unsafe_allow_html=True)
         if st.button("❌ Cancel"):
             st.session_state.review_data = None
             st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
     with col2:
-        st.markdown('<div class="green">', unsafe_allow_html=True)
         if st.button("✅ Confirm"):
 
             df = pd.DataFrame([data])
@@ -261,7 +280,6 @@ if st.session_state.review_data:
 
             st.session_state.review_data = None
             st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
 else:
 
