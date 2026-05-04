@@ -3,31 +3,7 @@ import pandas as pd
 from datetime import datetime
 import os, csv
 
-# -----------------------------
-# CONFIG
-# -----------------------------
 st.set_page_config(page_title="POD System", layout="centered")
-
-# -----------------------------
-# STYLE
-# -----------------------------
-st.markdown("""
-<style>
-.card {
-    padding:15px;
-    border-radius:12px;
-    background:white;
-    margin-bottom:10px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.05);
-}
-.stButton>button {
-    height:55px;
-    width:100%;
-    border-radius:10px;
-    font-size:16px;
-}
-</style>
-""", unsafe_allow_html=True)
 
 # -----------------------------
 # LOGIN
@@ -93,7 +69,7 @@ with col2:
         st.rerun()
 
 # -----------------------------
-# FILE + DATE SYSTEM
+# FILE SYSTEM
 # -----------------------------
 today = datetime.now().strftime("%Y-%m-%d")
 
@@ -159,7 +135,7 @@ jobs["driver"] = jobs["driver"].fillna("Unassigned")
 jobs["route"] = jobs["route"].fillna("Unknown")
 
 # -----------------------------
-# POD STORAGE
+# SAFE POD STORAGE
 # -----------------------------
 os.makedirs("deliveries", exist_ok=True)
 os.makedirs("photos", exist_ok=True)
@@ -167,8 +143,12 @@ os.makedirs("photos", exist_ok=True)
 pod_file = f"deliveries/{selected_date}.csv"
 
 if os.path.exists(pod_file):
-    completed = pd.read_csv(pod_file)
-    done_ids = completed["order_id"].astype(str)
+    try:
+        completed = pd.read_csv(pod_file, on_bad_lines='skip')
+        done_ids = completed["order_id"].astype(str)
+    except:
+        completed = pd.DataFrame()
+        done_ids = []
 else:
     completed = pd.DataFrame()
     done_ids = []
@@ -181,12 +161,18 @@ jobs = jobs[~jobs["order_id"].astype(str).isin(done_ids)]
 if st.session_state.auth["role"] == "manager":
 
     st.title(f"📊 Dashboard ({selected_date})")
-
     st.dataframe(jobs[["driver","route","customer","order_id"]])
 
     if not completed.empty:
         i = st.selectbox("View POD", completed.index)
-        st.write(completed.loc[i])
+        r = completed.loc[i]
+
+        st.write(r)
+
+        if pd.notna(r.get("image")):
+            path = f"photos/{r['image']}"
+            if os.path.exists(path):
+                st.image(path)
 
     st.stop()
 
@@ -214,13 +200,8 @@ customer = row["customer"]
 order_id = row["order_id"]
 route = row["route"]
 
-st.markdown(f"""
-<div class="card">
-<b>{customer}</b><br>
-Order: {order_id}<br>
-Route: {route}
-</div>
-""", unsafe_allow_html=True)
+st.write(customer)
+st.write(order_id)
 
 # -----------------------------
 # CONFIRM FLOW
@@ -238,23 +219,32 @@ elif st.session_state.review_data:
     data = st.session_state.review_data
 
     st.warning("Are you sure?")
-
     st.write(data)
 
-    if st.button("Cancel"):
-        st.session_state.review_data = None
-        st.rerun()
+    col1, col2 = st.columns(2)
 
-    if st.button("Confirm"):
+    with col1:
+        if st.button("Cancel"):
+            st.session_state.review_data = None
+            st.rerun()
 
-        df = pd.DataFrame([data])
-        exists = os.path.isfile(pod_file)
+    with col2:
+        if st.button("Confirm"):
 
-        df.to_csv(pod_file, mode="a", header=not exists, index=False, quoting=csv.QUOTE_ALL)
+            df = pd.DataFrame([data])
+            exists = os.path.isfile(pod_file)
 
-        st.session_state.review_data = None
-        st.session_state.submitted_job = data
-        st.rerun()
+            df.to_csv(
+                pod_file,
+                mode="a",
+                header=not exists,
+                index=False,
+                quoting=csv.QUOTE_ALL
+            )
+
+            st.session_state.review_data = None
+            st.session_state.submitted_job = data
+            st.rerun()
 
 else:
 
