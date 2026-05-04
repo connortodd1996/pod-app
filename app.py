@@ -6,6 +6,49 @@ import os, csv
 st.set_page_config(page_title="POD System", layout="centered")
 
 # -----------------------------
+# STYLE (MOBILE BUTTONS)
+# -----------------------------
+st.markdown("""
+<style>
+.card {
+    padding:15px;
+    border-radius:12px;
+    background:white;
+    margin-bottom:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+div.stButton > button {
+    height:60px;
+    font-size:18px;
+    border-radius:12px;
+}
+.green button {
+    background-color:#16a34a !important;
+    color:white !important;
+}
+.red button {
+    background-color:#dc2626 !important;
+    color:white !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# -----------------------------
+# SESSION STATE
+# -----------------------------
+if "selected_job" not in st.session_state:
+    st.session_state.selected_job = None
+
+if "review_data" not in st.session_state:
+    st.session_state.review_data = None
+
+if "submitted_job" not in st.session_state:
+    st.session_state.submitted_job = None
+
+if "auth" not in st.session_state:
+    st.session_state.auth = {"ok": False, "role": None, "driver": None}
+
+# -----------------------------
 # LOGIN
 # -----------------------------
 DRIVER_PINS = {
@@ -16,15 +59,6 @@ DRIVER_PINS = {
     "Mark": "3333"
 }
 MANAGER_PIN = "9999"
-
-if "auth" not in st.session_state:
-    st.session_state.auth = {"ok": False, "role": None, "driver": None}
-
-if "review_data" not in st.session_state:
-    st.session_state.review_data = None
-
-if "submitted_job" not in st.session_state:
-    st.session_state.submitted_job = None
 
 if not st.session_state.auth["ok"]:
 
@@ -59,10 +93,8 @@ if not st.session_state.auth["ok"]:
 # HEADER
 # -----------------------------
 col1, col2 = st.columns([4,1])
-
 with col1:
     st.markdown("### 🚚 POD System")
-
 with col2:
     if st.button("Logout"):
         st.session_state.auth = {"ok": False, "role": None, "driver": None}
@@ -135,7 +167,7 @@ jobs["driver"] = jobs["driver"].fillna("Unassigned")
 jobs["route"] = jobs["route"].fillna("Unknown")
 
 # -----------------------------
-# SAFE POD STORAGE
+# POD STORAGE
 # -----------------------------
 os.makedirs("deliveries", exist_ok=True)
 os.makedirs("photos", exist_ok=True)
@@ -156,27 +188,6 @@ else:
 jobs = jobs[~jobs["order_id"].astype(str).isin(done_ids)]
 
 # -----------------------------
-# MANAGER VIEW
-# -----------------------------
-if st.session_state.auth["role"] == "manager":
-
-    st.title(f"📊 Dashboard ({selected_date})")
-    st.dataframe(jobs[["driver","route","customer","order_id"]])
-
-    if not completed.empty:
-        i = st.selectbox("View POD", completed.index)
-        r = completed.loc[i]
-
-        st.write(r)
-
-        if pd.notna(r.get("image")):
-            path = f"photos/{r['image']}"
-            if os.path.exists(path):
-                st.image(path)
-
-    st.stop()
-
-# -----------------------------
 # DRIVER VIEW
 # -----------------------------
 driver = st.session_state.auth["driver"]
@@ -188,10 +199,16 @@ if driver_jobs.empty:
     st.success("All deliveries complete")
     st.stop()
 
+options = driver_jobs.index.tolist()
+
+if st.session_state.selected_job not in options:
+    st.session_state.selected_job = options[0]
+
 idx = st.selectbox(
     "Select Delivery",
-    driver_jobs.index,
-    format_func=lambda i: driver_jobs.loc[i,"customer"]
+    options,
+    format_func=lambda i: driver_jobs.loc[i,"customer"],
+    key="selected_job"
 )
 
 row = driver_jobs.loc[idx]
@@ -200,11 +217,16 @@ customer = row["customer"]
 order_id = row["order_id"]
 route = row["route"]
 
-st.write(customer)
-st.write(order_id)
+st.markdown(f"""
+<div class="card">
+<b>{customer}</b><br>
+Order: {order_id}<br>
+Route: {route}
+</div>
+""", unsafe_allow_html=True)
 
 # -----------------------------
-# CONFIRM FLOW
+# FLOW
 # -----------------------------
 if st.session_state.submitted_job:
 
@@ -218,18 +240,29 @@ elif st.session_state.review_data:
 
     data = st.session_state.review_data
 
-    st.warning("Are you sure?")
-    st.write(data)
+    st.warning("⚠️ Confirm Delivery")
+
+    st.markdown(f"""
+    <div class="card">
+    <b>{data['customer']}</b><br>
+    Order: {data['order_id']}<br>
+    Status: {data['status']}<br>
+    Notes: {data['notes']}
+    </div>
+    """, unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
 
     with col1:
-        if st.button("Cancel"):
+        st.markdown('<div class="red">', unsafe_allow_html=True)
+        if st.button("❌ Cancel"):
             st.session_state.review_data = None
             st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with col2:
-        if st.button("Confirm"):
+        st.markdown('<div class="green">', unsafe_allow_html=True)
+        if st.button("✅ Confirm"):
 
             df = pd.DataFrame([data])
             exists = os.path.isfile(pod_file)
@@ -244,7 +277,9 @@ elif st.session_state.review_data:
 
             st.session_state.review_data = None
             st.session_state.submitted_job = data
+            st.session_state.selected_job = None
             st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
 else:
 
