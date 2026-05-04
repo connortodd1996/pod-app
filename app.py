@@ -6,7 +6,7 @@ import urllib.parse
 import base64
 
 # -----------------------------
-# LOAD LOGO AS BASE64 (for background)
+# LOAD LOGO
 # -----------------------------
 def get_base64_image(path):
     with open(path, "rb") as f:
@@ -23,8 +23,6 @@ st.set_page_config(page_title="POD System", layout="centered")
 
 st.markdown(f"""
 <style>
-
-/* Background */
 .stApp {{
     background-color: #f9fafb;
     background-image: url("data:image/png;base64,{logo_base64}");
@@ -34,7 +32,6 @@ st.markdown(f"""
     background-attachment: fixed;
 }}
 
-/* Overlay fade */
 .stApp::before {{
     content: "";
     position: fixed;
@@ -46,7 +43,6 @@ st.markdown(f"""
     z-index: -1;
 }}
 
-/* Cards */
 .card {{
     padding: 15px;
     border-radius: 12px;
@@ -55,7 +51,6 @@ st.markdown(f"""
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }}
 
-/* Buttons */
 .stButton>button {{
     height: 60px;
     width: 100%;
@@ -63,11 +58,9 @@ st.markdown(f"""
     border-radius: 12px;
 }}
 
-/* Text */
 h1, h2, h3, p, label {{
     color: #111827 !important;
 }}
-
 </style>
 """, unsafe_allow_html=True)
 
@@ -89,6 +82,12 @@ MANAGER_PIN = "9999"
 # -----------------------------
 if "auth" not in st.session_state:
     st.session_state.auth = {"ok": False, "role": None, "driver": None}
+
+if "review_data" not in st.session_state:
+    st.session_state.review_data = None
+
+if "submitted_job" not in st.session_state:
+    st.session_state.submitted_job = None
 
 # -----------------------------
 # LOGIN
@@ -166,7 +165,7 @@ def maps_link(q):
 # LOGOUT
 # -----------------------------
 if st.button("🚪 Logout"):
-    st.session_state.auth = {"ok": False, "role": None, "driver": None}
+    st.session_state.clear()
     st.rerun()
 
 # -----------------------------
@@ -246,48 +245,95 @@ Route: {route}
 st.link_button("🧭 Navigate", maps_link(customer))
 
 # -----------------------------
-# FORM
+# REVIEW / CONFIRM FLOW
 # -----------------------------
-with st.form("form"):
+if st.session_state.submitted_job:
 
-    status = st.radio("Status", ["Delivered", "Failed"])
-    photo = st.file_uploader("📸 Upload Photo", type=["jpg", "png"])
-    notes = st.text_area("Notes")
+    st.success("✅ Delivery Saved")
 
-    if photo:
-        st.image(photo)
+    st.markdown(f"""
+    <div class="card">
+    <b>{st.session_state.submitted_job['customer']}</b><br>
+    Order: {st.session_state.submitted_job['order_id']}<br>
+    Status: {st.session_state.submitted_job['status']}
+    </div>
+    """, unsafe_allow_html=True)
 
-    submitted = st.form_submit_button("✅ Submit Delivery")
+    if st.button("➡️ Next Delivery"):
+        st.session_state.submitted_job = None
+        st.rerun()
 
-    if submitted:
-        filename = None
+elif st.session_state.review_data:
+
+    data = st.session_state.review_data
+
+    st.warning("⚠️ Are you sure?")
+
+    st.markdown(f"""
+    <div class="card">
+    <b>{data['customer']}</b><br>
+    Order: {data['order_id']}<br>
+    Status: {data['status']}<br>
+    Notes: {data['notes']}
+    </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        if st.button("❌ Cancel"):
+            st.session_state.review_data = None
+            st.rerun()
+
+    with col2:
+        if st.button("✅ Confirm"):
+
+            df = pd.DataFrame([data])
+            exists = os.path.isfile("deliveries.csv")
+
+            df.to_csv(
+                "deliveries.csv",
+                mode="a",
+                header=not exists,
+                index=False,
+                quoting=csv.QUOTE_ALL
+            )
+
+            st.session_state.review_data = None
+            st.session_state.submitted_job = data
+            st.rerun()
+
+else:
+
+    with st.form("form"):
+
+        status = st.radio("Status", ["Delivered", "Failed"])
+        photo = st.file_uploader("📸 Upload Photo", type=["jpg", "png"])
+        notes = st.text_area("Notes")
 
         if photo:
-            filename = f"{order_id}_{datetime.now().strftime('%H%M%S')}.jpg"
-            with open(f"photos/{filename}", "wb") as f:
-                f.write(photo.getbuffer())
+            st.image(photo)
 
-        data = {
-            "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "driver": driver,
-            "route": route,
-            "customer": customer,
-            "order_id": order_id,
-            "status": status,
-            "notes": notes,
-            "image": filename
-        }
+        submitted = st.form_submit_button("📤 Submit")
 
-        df = pd.DataFrame([data])
-        exists = os.path.isfile("deliveries.csv")
+        if submitted:
 
-        df.to_csv(
-            "deliveries.csv",
-            mode="a",
-            header=not exists,
-            index=False,
-            quoting=csv.QUOTE_ALL
-        )
+            filename = None
 
-        st.success("Saved ✅")
-        st.rerun()
+            if photo:
+                filename = f"{order_id}_{datetime.now().strftime('%H%M%S')}.jpg"
+                with open(f"photos/{filename}", "wb") as f:
+                    f.write(photo.getbuffer())
+
+            st.session_state.review_data = {
+                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "driver": driver,
+                "route": route,
+                "customer": customer,
+                "order_id": order_id,
+                "status": status,
+                "notes": notes,
+                "image": filename
+            }
+
+            st.rerun()
