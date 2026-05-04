@@ -83,6 +83,9 @@ if "review_data" not in st.session_state:
 if "submitted_job" not in st.session_state:
     st.session_state.submitted_job = None
 
+# -----------------------------
+# LOGIN SCREEN
+# -----------------------------
 if not st.session_state.auth["ok"]:
 
     st.title("🚚 POD System")
@@ -113,38 +116,39 @@ if not st.session_state.auth["ok"]:
     st.stop()
 
 # -----------------------------
-# DAILY FILE SYSTEM
+# DAILY FILE SYSTEM (ROLE BASED)
 # -----------------------------
-st.sidebar.header("📂 Daily File")
+if st.session_state.auth["role"] == "manager":
 
-uploaded_file = st.sidebar.file_uploader("Upload today's file", type=["txt"])
+    st.sidebar.header("📂 Daily File")
 
-# Save uploaded file
-if uploaded_file:
-    with open("current_day.txt", "wb") as f:
-        f.write(uploaded_file.getbuffer())
-    st.sidebar.success("File saved!")
+    uploaded_file = st.sidebar.file_uploader("Upload today's file", type=["txt"])
 
-# Load saved file
+    if uploaded_file:
+        with open("current_day.txt", "wb") as f:
+            f.write(uploaded_file.getbuffer())
+        st.sidebar.success("File saved!")
+
+    if st.sidebar.button("🧹 Start New Day"):
+        if os.path.exists("deliveries.csv"):
+            os.remove("deliveries.csv")
+        if os.path.exists("current_day.txt"):
+            os.remove("current_day.txt")
+        if os.path.exists("photos"):
+            for f in os.listdir("photos"):
+                os.remove(f"photos/{f}")
+        st.sidebar.success("New day started!")
+        st.rerun()
+
+# LOAD FILE FOR EVERYONE
 if os.path.exists("current_day.txt"):
     raw = pd.read_csv("current_day.txt", sep="\t")
 else:
-    st.warning("Upload today's MYOB file")
+    if st.session_state.auth["role"] == "driver":
+        st.warning("🚧 Waiting for manager to upload today's deliveries")
+    else:
+        st.warning("Please upload today's MYOB file")
     st.stop()
-
-# -----------------------------
-# NEW DAY RESET
-# -----------------------------
-if st.sidebar.button("🧹 Start New Day"):
-    if os.path.exists("deliveries.csv"):
-        os.remove("deliveries.csv")
-    if os.path.exists("current_day.txt"):
-        os.remove("current_day.txt")
-    if os.path.exists("photos"):
-        for f in os.listdir("photos"):
-            os.remove(f"photos/{f}")
-    st.sidebar.success("New day started!")
-    st.rerun()
 
 # -----------------------------
 # DATA CLEANING
