@@ -1,33 +1,49 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(page_title="POD System", layout="centered")
 
 # -----------------------------
-# SAFE GOOGLE SHEETS CONNECTION
+# STYLE
 # -----------------------------
-sheet = None
+st.markdown("""
+<style>
+.card {
+    padding:15px;
+    border-radius:12px;
+    background:white;
+    margin-bottom:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+.green button {
+    background-color:#16a34a !important;
+    color:white !important;
+    height:60px;
+}
+.red button {
+    background-color:#dc2626 !important;
+    color:white !important;
+    height:60px;
+}
+</style>
+""", unsafe_allow_html=True)
 
-try:
-    import gspread
-    from oauth2client.service_account import ServiceAccountCredentials
+# -----------------------------
+# GOOGLE SHEETS
+# -----------------------------
+scope = [
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/drive"
+]
 
-    scope = [
-        "https://spreadsheets.google.com/feeds",
-        "https://www.googleapis.com/auth/drive"
-    ]
+creds_dict = st.secrets["gcp_service_account"]
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+client = gspread.authorize(creds)
 
-    creds_dict = st.secrets["gcp_service_account"]
-
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
-    client = gspread.authorize(creds)
-
-    sheet = client.open("POD_DATA").sheet1
-
-except Exception as e:
-    st.error("Google Sheets connection failed ❌")
-    st.code(str(e))
+sheet = client.open("POD_DATA").sheet1
 
 # -----------------------------
 # SESSION
@@ -93,18 +109,10 @@ with col2:
 # -----------------------------
 # LOAD DATA
 # -----------------------------
-if sheet:
-    records = sheet.get_all_records()
-    completed = pd.DataFrame(records)
-else:
-    completed = pd.DataFrame()
+records = sheet.get_all_records()
+completed = pd.DataFrame(records)
 
-try:
-    raw = pd.read_csv("current_day.txt", sep="\t")
-except:
-    st.error("Missing current_day.txt file")
-    st.stop()
-
+raw = pd.read_csv("current_day.txt", sep="\t")
 route_map = pd.read_csv("route_map.csv")
 
 raw.columns = raw.columns.str.strip()
@@ -123,11 +131,42 @@ jobs = jobs.drop(columns=["customer_x","customer_y"], errors="ignore")
 
 jobs["driver"] = jobs["driver"].fillna("Unassigned")
 
+# Remove completed
 if not completed.empty:
     jobs = jobs[~jobs["order_id"].astype(str).isin(completed["order_id"].astype(str))]
 
 # -----------------------------
-# DRIVER VIEW
+# MANAGER
+# -----------------------------
+if st.session_state.auth["role"] == "manager":
+
+    st.title("📊 Manager Dashboard")
+
+    if completed.empty:
+        st.info("No deliveries yet")
+    else:
+        i = st.selectbox(
+            "Select Delivery",
+            completed.index,
+            format_func=lambda x: completed.loc[x,"customer"]
+        )
+
+        row = completed.loc[i]
+
+        st.markdown(f"""
+        <div class="card">
+        <b>{row['customer']}</b><br>
+        Order: {row['order_id']}<br>
+        Driver: {row['driver']}<br>
+        Status: {row['status']}<br>
+        Notes: {row['notes']}
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.stop()
+
+# -----------------------------
+# DRIVER
 # -----------------------------
 driver = st.session_state.auth["driver"]
 
@@ -141,9 +180,15 @@ row = driver_jobs.iloc[0]
 
 customer = row["customer"]
 order_id = row["order_id"]
+route = row["route"]
 
-st.title(customer)
-st.write(order_id)
+st.markdown(f"""
+<div class="card">
+<b>{customer}</b><br>
+Order: {order_id}<br>
+Route: {route}
+</div>
+""", unsafe_allow_html=True)
 
 # -----------------------------
 # FLOW
@@ -152,13 +197,30 @@ if st.session_state.review:
 
     data = st.session_state.review
 
-    st.warning("Confirm delivery")
+    st.warning("⚠️ Confirm Delivery")
 
-    st.write(data)
+    st.markdown(f"""
+    <div class="card">
+    <b>{data['customer']}</b><br>
+    Order: {data['order_id']}<br>
+    Status: {data['status']}<br>
+    Notes: {data['notes']}
+    </div>
+    """, unsafe_allow_html=True)
 
-    if st.button("Confirm"):
+    col1, col2 = st.columns(2)
 
-        if sheet:
+    with col1:
+        st.markdown('<div class="red">', unsafe_allow_html=True)
+        if st.button("Cancel"):
+            st.session_state.review = None
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
+
+    with col2:
+        st.markdown('<div class="green">', unsafe_allow_html=True)
+        if st.button("Confirm"):
+
             new_row = [
                 data["time"],
                 data["driver"],
@@ -171,17 +233,12 @@ if st.session_state.review:
             ]
 
             sheet.append_row(new_row)
-            st.success("Saved to Google Sheets ✅")
 
-        else:
-            st.error("Sheet not connected")
+            st.success("Saved ✅")
 
-        st.session_state.review = None
-        st.rerun()
-
-    if st.button("Cancel"):
-        st.session_state.review = None
-        st.rerun()
+            st.session_state.review = None
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
 else:
 
@@ -197,7 +254,7 @@ else:
             st.session_state.review = {
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "driver": driver,
-                "route": row["route"],
+                "route": route,
                 "customer": customer,
                 "order_id": order_id,
                 "status": status,
