@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import os, csv
-import base64
 
 # -----------------------------
 # CONFIG
@@ -10,25 +9,19 @@ import base64
 st.set_page_config(page_title="POD System", layout="centered")
 
 # -----------------------------
-# HEADER STYLE
+# STYLE
 # -----------------------------
 st.markdown("""
 <style>
-.header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 0;
-}
 .card {
     padding:15px;
     border-radius:12px;
-    background-color:#ffffff;
+    background:white;
     margin-bottom:10px;
     box-shadow:0 2px 6px rgba(0,0,0,0.05);
 }
 .stButton>button {
-    height:50px;
+    height:55px;
     width:100%;
     border-radius:10px;
     font-size:16px;
@@ -50,6 +43,12 @@ MANAGER_PIN = "9999"
 
 if "auth" not in st.session_state:
     st.session_state.auth = {"ok": False, "role": None, "driver": None}
+
+if "review_data" not in st.session_state:
+    st.session_state.review_data = None
+
+if "submitted_job" not in st.session_state:
+    st.session_state.submitted_job = None
 
 if not st.session_state.auth["ok"]:
 
@@ -81,7 +80,7 @@ if not st.session_state.auth["ok"]:
     st.stop()
 
 # -----------------------------
-# HEADER BAR
+# HEADER
 # -----------------------------
 col1, col2 = st.columns([4,1])
 
@@ -94,7 +93,7 @@ with col2:
         st.rerun()
 
 # -----------------------------
-# DATE + FILE HANDLING
+# FILE + DATE SYSTEM
 # -----------------------------
 today = datetime.now().strftime("%Y-%m-%d")
 
@@ -138,7 +137,7 @@ else:
         st.stop()
 
 # -----------------------------
-# DATA CLEAN
+# CLEAN DATA
 # -----------------------------
 route_map = pd.read_csv("route_map.csv")
 
@@ -160,9 +159,11 @@ jobs["driver"] = jobs["driver"].fillna("Unassigned")
 jobs["route"] = jobs["route"].fillna("Unknown")
 
 # -----------------------------
-# POD STORAGE BY DATE
+# POD STORAGE
 # -----------------------------
 os.makedirs("deliveries", exist_ok=True)
+os.makedirs("photos", exist_ok=True)
+
 pod_file = f"deliveries/{selected_date}.csv"
 
 if os.path.exists(pod_file):
@@ -181,30 +182,11 @@ if st.session_state.auth["role"] == "manager":
 
     st.title(f"📊 Dashboard ({selected_date})")
 
-    st.subheader("📦 Deliveries")
-    st.dataframe(jobs[["driver", "route", "customer", "order_id"]])
-
-    st.subheader("📸 PODs")
+    st.dataframe(jobs[["driver","route","customer","order_id"]])
 
     if not completed.empty:
-        idx = st.selectbox(
-            "Select delivery",
-            completed.index,
-            format_func=lambda i: f"{completed.loc[i,'customer']} ({completed.loc[i,'driver']})"
-        )
-
-        r = completed.loc[idx]
-
-        st.markdown(f"""
-        <div class="card">
-        <b>{r['customer']}</b><br>
-        Driver: {r['driver']}<br>
-        Time: {r['time']}
-        </div>
-        """, unsafe_allow_html=True)
-
-    else:
-        st.info("No PODs yet")
+        i = st.selectbox("View POD", completed.index)
+        st.write(completed.loc[i])
 
     st.stop()
 
@@ -221,41 +203,90 @@ if driver_jobs.empty:
     st.stop()
 
 idx = st.selectbox(
-    "Select delivery",
+    "Select Delivery",
     driver_jobs.index,
-    format_func=lambda i: driver_jobs.loc[i, "customer"]
+    format_func=lambda i: driver_jobs.loc[i,"customer"]
 )
 
 row = driver_jobs.loc[idx]
 
+customer = row["customer"]
+order_id = row["order_id"]
+route = row["route"]
+
 st.markdown(f"""
 <div class="card">
-<b>{row['customer']}</b><br>
-Order: {row['order_id']}<br>
-Route: {row['route']}
+<b>{customer}</b><br>
+Order: {order_id}<br>
+Route: {route}
 </div>
 """, unsafe_allow_html=True)
 
-if st.button("Confirm Delivery"):
+# -----------------------------
+# CONFIRM FLOW
+# -----------------------------
+if st.session_state.submitted_job:
 
-    data = {
-        "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "driver": driver,
-        "route": row["route"],
-        "customer": row["customer"],
-        "order_id": row["order_id"]
-    }
+    st.success("✅ Delivery Saved")
 
-    df = pd.DataFrame([data])
-    exists = os.path.isfile(pod_file)
+    if st.button("Next Delivery"):
+        st.session_state.submitted_job = None
+        st.rerun()
 
-    df.to_csv(
-        pod_file,
-        mode="a",
-        header=not exists,
-        index=False,
-        quoting=csv.QUOTE_ALL
-    )
+elif st.session_state.review_data:
 
-    st.success("Delivery saved")
-    st.rerun()
+    data = st.session_state.review_data
+
+    st.warning("Are you sure?")
+
+    st.write(data)
+
+    if st.button("Cancel"):
+        st.session_state.review_data = None
+        st.rerun()
+
+    if st.button("Confirm"):
+
+        df = pd.DataFrame([data])
+        exists = os.path.isfile(pod_file)
+
+        df.to_csv(pod_file, mode="a", header=not exists, index=False, quoting=csv.QUOTE_ALL)
+
+        st.session_state.review_data = None
+        st.session_state.submitted_job = data
+        st.rerun()
+
+else:
+
+    with st.form("form"):
+
+        status = st.radio("Status", ["Delivered","Failed"])
+        photo = st.file_uploader("Upload Photo", type=["jpg","png"])
+        notes = st.text_area("Notes")
+
+        if photo:
+            st.image(photo)
+
+        submitted = st.form_submit_button("Submit")
+
+        if submitted:
+
+            filename = None
+
+            if photo:
+                filename = f"{order_id}_{datetime.now().strftime('%H%M%S')}.jpg"
+                with open(f"photos/{filename}", "wb") as f:
+                    f.write(photo.getbuffer())
+
+            st.session_state.review_data = {
+                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "driver": driver,
+                "route": route,
+                "customer": customer,
+                "order_id": order_id,
+                "status": status,
+                "notes": notes,
+                "image": filename
+            }
+
+            st.rerun()
