@@ -6,7 +6,13 @@ from oauth2client.service_account import ServiceAccountCredentials
 import base64
 from PIL import Image
 import io
-import plotly.express as px
+
+# Optional import for charts
+try:
+    import plotly.express as px
+    PLOTLY_AVAILABLE = True
+except ImportError:
+    PLOTLY_AVAILABLE = False
 
 st.set_page_config(
     page_title="POD • Proof of Delivery",
@@ -186,39 +192,39 @@ if st.session_state.auth["role"] == "manager":
         "📋 All PODs", "❌ Failed Deliveries"
     ])
 
-    with tab1:  # Overview
+    with tab1:
         col1, col2 = st.columns([2, 1])
         with col1:
-            if not completed_df.empty:
+            if not completed_df.empty and PLOTLY_AVAILABLE:
                 completed_df['date'] = completed_df['time'].dt.date
                 daily = completed_df.groupby('date').size().reset_index(name='count')
                 fig = px.bar(daily, x='date', y='count', title="Daily Completion Trend")
                 st.plotly_chart(fig, use_container_width=True)
-        
+            else:
+                st.info("Charts unavailable (Plotly not installed)")
+
         with col2:
-            if not completed_df.empty:
+            if not completed_df.empty and PLOTLY_AVAILABLE:
                 driver_perf = completed_df.groupby('driver').size().reset_index(name='count')
                 fig2 = px.pie(driver_perf, names='driver', values='count', title="Deliveries by Driver")
                 st.plotly_chart(fig2, use_container_width=True)
+            else:
+                st.info("Charts unavailable")
 
-    with tab2:  # Live Operations
+    with tab2:
         st.subheader("Current Driver Activity")
         if not active_jobs.empty:
-            driver_group = active_jobs.groupby('driver').agg(
-                Remaining=('order_id', 'count')
-            ).reset_index()
-            
+            driver_group = active_jobs.groupby('driver').agg(Remaining=('order_id', 'count')).reset_index()
             for _, r in driver_group.iterrows():
-                total_for_driver = len(jobs[jobs['driver'] == r['driver']])
-                progress = 1 - (r['Remaining'] / total_for_driver) if total_for_driver > 0 else 0
+                total_for_d = len(jobs[jobs['driver'] == r['driver']])
+                progress = 1 - (r['Remaining'] / total_for_d) if total_for_d > 0 else 0
                 st.markdown(f"**{r['driver']}** — {r['Remaining']} remaining")
                 st.progress(progress)
-                st.caption(f"Progress: {int(progress*100)}%")
                 st.divider()
         else:
             st.success("🎉 All deliveries completed today!")
 
-    with tab3:  # Driver Performance
+    with tab3:
         if not completed_df.empty:
             perf = completed_df.groupby('driver').agg(
                 Total=('order_id','count'),
@@ -228,7 +234,7 @@ if st.session_state.auth["role"] == "manager":
             perf['Success %'] = round(perf['Delivered'] / perf['Total'] * 100, 1)
             st.dataframe(perf.sort_values('Success %', ascending=False), use_container_width=True, hide_index=True)
 
-    with tab4:  # All PODs
+    with tab4:
         st.subheader("All Completed Deliveries")
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -236,7 +242,7 @@ if st.session_state.auth["role"] == "manager":
         with col2:
             status_filter = st.selectbox("Status", ["All", "Delivered", "Failed"])
         with col3:
-            search = st.text_input("Search Customer or Order ID")
+            search = st.text_input("Search Customer or Order")
 
         df_view = completed_df.copy()
         if selected_drivers:
@@ -248,25 +254,25 @@ if st.session_state.auth["role"] == "manager":
 
         st.dataframe(df_view, use_container_width=True, hide_index=True)
 
-        if st.button("Export as CSV"):
+        if st.button("Export CSV", use_container_width=True):
             csv = df_view.to_csv(index=False).encode()
-            st.download_button("Download CSV", csv, f"POD_Report_{datetime.now().strftime('%Y%m%d_%H%M')}.csv", "text/csv")
+            st.download_button("Download CSV", csv, f"POD_Report_{datetime.now().strftime('%Y%m%d')}.csv", "text/csv")
 
-    with tab5:  # Failed Deliveries
+    with tab5:
         failed_df = completed_df[completed_df["status"] == "Failed"] if not completed_df.empty else pd.DataFrame()
         if not failed_df.empty:
-            st.error(f"⚠️ {len(failed_df)} Failed Deliveries Today")
+            st.error(f"⚠️ {len(failed_df)} Failed Deliveries")
             for _, row in failed_df.iterrows():
-                with st.expander(f"❌ {row['customer']} — Order #{row['order_id']}"):
-                    st.write(f"**Driver:** {row['driver']} | **Time:** {row['time']}")
-                    st.write(f"**Notes:** {row.get('notes', 'No notes')}")
+                with st.expander(f"❌ {row['customer']} — #{row['order_id']}"):
+                    st.write(f"**Driver:** {row['driver']} | **Time:** {row.get('time')}")
+                    st.write(f"**Notes:** {row.get('notes', '—')}")
                     if row.get("image"):
                         try:
                             st.image(base64.b64decode(row["image"]), width=500)
                         except:
                             pass
         else:
-            st.success("No failed deliveries today — Excellent performance!")
+            st.success("No failed deliveries today!")
 
     st.stop()
 
@@ -278,7 +284,6 @@ if driver_jobs.empty:
     st.balloons()
     st.stop()
 
-# Driver Progress
 completed_today = len(completed_df[completed_df["driver"] == driver]) if not completed_df.empty else 0
 total_today = len(jobs[jobs["driver"] == driver])
 
@@ -295,7 +300,6 @@ with col2:
     st.subheader(f"Welcome back, {driver} 👋")
     st.write(f"You have **{len(driver_jobs)} deliveries** remaining.")
 
-# Select Delivery
 selected_idx = st.selectbox(
     "Select Delivery",
     options=driver_jobs.index,
@@ -312,11 +316,11 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# ====================== DELIVERY FORM ======================
+# Form Section (same as before)
 if st.session_state.review:
+    # ... (review logic - same as previous version)
     d = st.session_state.review
     st.warning("### Confirm Submission")
-    
     st.markdown(f"""
     <div class="card">
         <h4>{d['customer']}</h4>
