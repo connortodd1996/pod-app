@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import gspread
-import json
 from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(page_title="POD System", layout="centered")
@@ -15,7 +14,8 @@ scope = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-creds_dict = json.loads(st.secrets["gcp_service_account"])
+creds_dict = st.secrets["gcp_service_account"]
+
 creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
 
